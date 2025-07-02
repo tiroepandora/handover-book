@@ -1,0 +1,27 @@
+# Quarto and bookdown build artifacts
+_book/
+.quarto/
+docs/
+
+# Output and resource folders
+images/
+references/
+
+# Quarto and project config files
+quarto.yml
+
+# Quarto documents
+dashboards.qmd
+google_cloud_platforms.qmd
+hr.qmd
+index.qmd
+measures.qmd
+operational_tasks.qmd
+project_ideas.qmd
+tabular_editor.qmd
+useful_links.qmd
+
+# Stylesheets
+styles.css
+styles.css.map
+styles.scss
