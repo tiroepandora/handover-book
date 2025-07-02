@@ -1,7 +1,7 @@
 # Quarto and bookdown build artifacts
 _book/
 .quarto/
-docs/
+
 
 # Output and resource folders
 images/
