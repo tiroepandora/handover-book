@@ -1,7 +1,21 @@
 # Quarto and bookdown build artifacts
 _book/
 .quarto/
-docs/
+
+docs/images
+docs/references
+docs/site_libs
+docs/dashboards.html
+docs/google_cloud_platforms.html
+docs/hr.html
+docs/measures.html
+docs/index.html
+docs/operational_tasks.html
+docs/project_ideas.html
+docs/search.json
+docs/tabular_editor.html
+docs/useful_links.html
+
 
 
 # Output and resource folders
