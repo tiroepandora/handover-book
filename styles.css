@@ -1,0 +1,19 @@
+/*-- scss:rules --*/
+h1 {
+  color: #ff93a0;
+}
+
+a {
+  color: #ff93a0;
+}
+
+a:hover {
+  color: #e73026;
+}
+
+.alert {
+  background-color: #e73026;
+  color: #ffffff;
+}
+
+/*# sourceMappingURL=styles.css.map */

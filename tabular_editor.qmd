@@ -1,0 +1,56 @@
+---
+title: "Tabular Editor"
+format: html
+---
+
+Tabular Editor is a powerful tool for developing and maintaining Power BI data models.  
+I have explored its capabilities using the free trial version, and I recommend purchasing **two individual licenses**—one for you and one for Tomas—to unlock the full feature set.
+
+You can launch Tabular Editor directly from Power BI via the **External Tools** section.  
+This integration allows you to load your current data model and make changes seamlessly, without the need to export or re-import files.
+
+---
+
+## Introduction to Tabular Editor
+
+Tabular Editor offers an efficient interface for editing tabular data models.  
+It is especially valuable for backend dashboard management, enabling quick updates, advanced scripting, and automation.
+
+---
+
+## Key Features Explored
+
+### Best Practice Analyzer (BPA)
+
+- I have run the Best Practice Analyzer on the All Tides RIS model using a Best Practices JSON file from GitHub.
+- This tool automatically scans the model for common issues and optimization opportunities, helping us adhere to recommended standards.
+- **Best Practices JSON file:**  
+    [Best Practices JSON](references/BPA.json)
+
+### Tabular Object Model (TOM) Access
+
+- Tabular Editor provides direct access to the Tabular Object Model (TOM), allowing us to inspect and edit the structure of our data models.
+- This enables advanced modifications and efficient automation of repetitive tasks.
+
+### Dependency Visualization
+
+- The dependency visualization feature helps us understand relationships between tables, measures, and columns.
+- It is useful for identifying potential issues before making changes.
+
+### Diagram Mode
+
+- Diagram Mode offers a clear graphical overview of our data model, making it easier to communicate design choices and understand the overall structure.
+
+### C# Scripting
+
+- Tabular Editor supports C# scripting, which enables automation of repetitive tasks and customization of model management processes.
+- With C# scripts, we can batch-create measures, automate formatting, enforce naming conventions, and apply best practices across multiple models efficiently.
+- Leveraging C# scripting will be especially valuable for our future dashboard management, as it allows us to standardize processes, reduce manual errors, and accelerate development.
+- As our models grow in complexity, scripting will help us maintain consistency and implement changes at scale with minimal effort.
+
+---
+
+## Getting Started
+
+Watch this useful introduction video:  
+[Tabular Editor for Power BI](https://www.youtube.com/watch?v=O4ATwdzCvWc)

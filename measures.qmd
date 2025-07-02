@@ -1,0 +1,270 @@
+---
+title: "Measures"
+format: html
+---
+This section outlines some some features i have created and it is useful to have some documentation for them.
+
+## BrandInterest & Category Interest in BigQuery and PowerBI
+
+To enhance performance and reliability, both BrandInterest and Category Interest calculations are now performed in BigQuery.
+
+### BrandInterest in BigQuery
+
+There are two main views for BrandInterest in BigQuery:
+
+- **BrandInterestAGG**: The primary view containing all key metrics for all markets across the full date range.
+- **BrandInterestAGG_2**: A fallback view that always contains the latest complete week for each market (one row per market). This ensures that if a user selects a week with incomplete data, the dashboard will automatically display the latest available complete week for each market. If the selected week has complete data, the dashboard will show that week as expected. This approach avoids complex workarounds or heavy computations in PowerBI and ensures users always see the most relevant and complete data.
+
+The same approach is applied to CategoryInterest data.
+
+- [BrandInterestAGG View](https://console.cloud.google.com/bigquery?project=pandora-dashboard-data&ws=!1m5!1m4!4m3!1spandora-dashboard-data!2sgoogle_offline_data!3sBrandInterestAGG&pli=1&inv=1&invt=Ab09Vg)
+- [BrandInterestAGG_2 View](https://console.cloud.google.com/bigquery?project=pandora-dashboard-data&ws=!1m10!1m4!4m3!1spandora-dashboard-data!2sgoogle_offline_data!3sBrandInterestAGG!1m4!4m3!1spandora-dashboard-data!2sgoogle_offline_data!3sBrandInterestAGG_2&pli=1&inv=1&invt=Ab09Vg&chat=true)
+- [CategoryInterestAGG View](https://console.cloud.google.com/bigquery?project=pandora-dashboard-data&ws=!1m10!1m4!4m3!1spandora-dashboard-data!2sgoogle_offline_data!3sCategoryInterestAGG&pli=1&inv=1&invt=Ab09Vg&chat=true)
+- [CategoryInterestAGG_2 View](https://console.cloud.google.com/bigquery?project=pandora-dashboard-data&ws=!1m10!1m4!4m3!1spandora-dashboard-data!2sgoogle_offline_data!3sBrandInterestAGG!1m4!4m3!1spandora-dashboard-data!2sgoogle_offline_data!3sCategoryInterestAGG_2&pli=1&inv=1&invt=Ab09Vg&chat=true)
+
+These views are connected to PowerBI, allowing you to use simple measures directly in your visuals. The tables are linked to the master dates table using `Week_ForForFive` and to the market dimension using the market key.
+
+Below is the SQL query for the **BrandInterestAGG** view, with explanations:
+
+
+```sql
+-- Step 1: Aggregate weekly data per country and map country names to market codes
+WITH Aggregated AS (
+    SELECT 
+        b.country,
+        -- Map country names to 2-letter market codes
+        CASE b.country 
+            WHEN 'Australia' THEN 'AU' WHEN 'Canada' THEN 'CA' WHEN 'Germany' THEN 'DE'
+            WHEN 'Spain' THEN 'ES' WHEN 'France' THEN 'FR' WHEN 'Italy' THEN 'IT'
+            WHEN 'Poland' THEN 'PL' WHEN 'United Kingdom' THEN 'UK' WHEN 'United States' THEN 'US'
+            WHEN 'China' THEN 'CN' WHEN 'Mexico' THEN 'MX' ELSE 'N/A' 
+        END AS Market,
+        MIN(b.date) AS FirstDayOfTheWeek, -- Get the earliest date for the week
+        CAST(m.Week_ForForFive AS INT64) AS Week_ForForFive, -- Week identifier
+        AVG(b.queries) AS Sum_BI, -- Average branded queries for the week
+        MAX(m.WeekDay) AS Max_WeekDay, -- Last day of the week
+        AVG(b.queries / b.total_searches) AS avg_share_of_searches -- Average share of branded queries
+    FROM `pandora-dashboard-data.google_offline_data.branded_searches_backfill` b
+    JOIN `pandora-dashboard-data.Master_Date_Table.master_dates` m
+        ON b.date = PARSE_DATE('%Y-%m-%d', m.DW_TS_From) -- Join on date
+    WHERE b.Brand = "Pandora" -- Filter for Pandora brand
+    GROUP BY b.country, m.Week_ForForFive
+),
+
+-- Step 2: Calculate rolling averages for the current year (CY)
+CY AS (
+    SELECT 
+        Market, 
+        Week_ForForFive, 
+        Week_ForForFive - 100 AS Week_ForForFive_LY, -- Calculate last year's week
+        Max_WeekDay, 
+        FirstDayOfTheWeek, 
+        Sum_BI, 
+        avg_share_of_searches,
+        -- 4-week rolling average of Sum_BI (current and next 3 weeks)
+        AVG(Sum_BI) OVER (PARTITION BY Market ORDER BY Week_ForForFive DESC ROWS BETWEEN CURRENT ROW AND 3 FOLLOWING) AS Four_Week_Avg_CY,
+        -- 4-week rolling average of avg_share_of_searches
+        AVG(avg_share_of_searches) OVER (PARTITION BY Market ORDER BY Week_ForForFive DESC ROWS BETWEEN CURRENT ROW AND 3 FOLLOWING) AS Four_Week_Avg_Share_CY,
+        -- 12-week rolling average of Sum_BI
+        AVG(Sum_BI) OVER (PARTITION BY Market ORDER BY Week_ForForFive DESC ROWS BETWEEN CURRENT ROW AND 11 FOLLOWING) AS Twelve_Week_Avg_CY
+    FROM Aggregated
+),
+
+-- Step 3: Calculate rolling averages for the last year (LY)
+LY AS (
+    SELECT 
+        Market, 
+        Week_ForForFive, 
+        Sum_BI, 
+        avg_share_of_searches,
+        -- 4-week rolling average for LY
+        AVG(Sum_BI) OVER (PARTITION BY Market ORDER BY Week_ForForFive DESC ROWS BETWEEN CURRENT ROW AND 3 FOLLOWING) AS Four_Week_Avg_LY,
+        -- 12-week rolling average for LY
+        AVG(Sum_BI) OVER (PARTITION BY Market ORDER BY Week_ForForFive DESC ROWS BETWEEN CURRENT ROW AND 11 FOLLOWING) AS Twelve_Week_Avg_LY
+    FROM Aggregated
+)
+
+-- Step 4: Join CY and LY, calculate YOY metrics and lagged values
+SELECT 
+    cy.Market, 
+    cy.Week_ForForFive, 
+    cy.Max_WeekDay, 
+    FORMAT_DATE('%Y%m%d', cy.FirstDayOfTheWeek) AS DateKey, -- Format date for reporting
+    cy.Sum_BI, 
+    cy.avg_share_of_searches, 
+    cy.Four_Week_Avg_CY, 
+    cy.Four_Week_Avg_Share_CY, 
+    cy.Twelve_Week_Avg_CY,
+    ly.Four_Week_Avg_LY, 
+    ly.Twelve_Week_Avg_LY, 
+    ly.avg_share_of_searches as avg_share_of_searches_ly,
+
+    -- Year-over-year (YOY) comparisons (as percentages)
+    (cy.Four_Week_Avg_CY / NULLIF(ly.Four_Week_Avg_LY, 0)) * 100 AS Four_Week_YOY,
+    (cy.Twelve_Week_Avg_CY / NULLIF(ly.Twelve_Week_Avg_LY, 0)) * 100 AS Twelve_Week_YOY,
+    (cy.Sum_BI / NULLIF(ly.Sum_BI, 0)) * 100 AS YOY,
+
+    -- Lagged YOY values (next week’s YOY, for trend analysis)
+    LEAD((cy.Four_Week_Avg_CY / NULLIF(ly.Four_Week_Avg_LY, 0)) * 100) OVER (PARTITION BY cy.Market ORDER BY cy.Week_ForForFive DESC) AS Four_Week_YOY_lag,
+    LEAD((cy.Twelve_Week_Avg_CY / NULLIF(ly.Twelve_Week_Avg_LY, 0)) * 100) OVER (PARTITION BY cy.Market ORDER BY cy.Week_ForForFive DESC) AS Twelve_Week_YOY_lag,
+    LEAD((cy.Sum_BI / NULLIF(ly.Sum_BI, 0)) * 100) OVER (PARTITION BY cy.Market ORDER BY cy.Week_ForForFive DESC) AS YOY_lag,
+
+    -- Lagged values for share of searches and rolling averages
+    LEAD(cy.avg_share_of_searches) OVER (PARTITION BY cy.Market ORDER BY cy.Week_ForForFive DESC) AS avg_share_of_searches_CY_lag,
+    LEAD(ly.avg_share_of_searches) OVER (PARTITION BY cy.Market ORDER BY cy.Week_ForForFive DESC) AS avg_share_of_searches_LY_lag,
+    LEAD(cy.Four_Week_Avg_Share_CY) OVER (PARTITION BY cy.Market ORDER BY cy.Week_ForForFive DESC) AS Four_Week_Avg_Share_CY_lag
+
+FROM CY
+LEFT JOIN LY 
+    ON cy.Market = ly.Market 
+    AND cy.Week_ForForFive_LY = ly.Week_ForForFive -- Join CY with LY by market and week
+ORDER BY cy.Market ASC, cy.Week_ForForFive DESC;
+```
+
+
+## Customer Acquisition
+
+With the integration of Customer Acquisition (CA) into the dashboards, several changes have been made. We now use monthly data for CA reporting.
+
+```sql
+CA_Month_YoY_Simplified = 
+VAR CurrentYear = [Current Year Number WA]
+VAR SelectedWeek = SELECTEDVALUE('Date'[Week Number int 2])
+
+-- Step 1: Get the MonthIndex for the selected week
+VAR SelectedMonthIndex =
+    CALCULATE(
+        MAX('Date'[YearMonth445]),
+        ALL('Date'),
+        'Date'[Year] = CurrentYear,
+        'Date'[Week Number int 2] = SelectedWeek
+    )
+
+-- Step 2: Find latest populated MonthIndex from the fact table
+VAR LatestMonthNr = 
+CALCULATE(
+    MAX('Customer_Acquisition_Monthly'[MonthYR]),
+    TOPN(
+        2,
+        ALL('Customer_Acquisition_Monthly'),
+        'Customer_Acquisition_Monthly'[Year], DESC,
+        'Customer_Acquisition_Monthly'[Month Nr], DESC
+    )
+)
+-- Step 3: Determine which month to use based on the simplified logic
+VAR UseMonth =
+    IF(
+        SelectedMonthIndex <= LatestMonthNr + 1,
+        SelectedMonthIndex - 1,
+        LatestMonthNr
+    )
+
+
+
+-- Step 5: Get values for CY and LY
+VAR CY_Value =
+    CALCULATE(
+        SUM(Customer_Acquisition_Monthly[NbrCustomers]),
+        Customer_Acquisition_Monthly[MonthYR] = UseMonth
+    )
+
+VAR LY_Value =
+    CALCULATE(
+        SUM(Customer_Acquisition_Monthly[NbrCustomers]),
+        Customer_Acquisition_Monthly[MonthYR] = UseMonth - 100
+    )
+
+-- Step 6: Return YoY %
+RETURN
+    DIVIDE(CY_Value * 100, LY_Value, 0)
+```
+
+### How the "CA_Month_YOY_Simplified" Measure Works
+
+The measure "CA_Month_YOY_Simplified" calculates the Year-over-Year (YoY) change in customer acquisition for a selected week. It determines the relevant month based on the selected week and the latest available data, then compares the number of customers acquired in that month for the current year and the previous year.
+
+#### Step-by-Step Logic
+
+1. **Determine the Month for the Selected Week**  
+    The measure identifies which month (using the `YearMonth445` field) the selected week falls into.
+
+2. **Find the Latest Populated Month in the Fact Table**  
+    It checks the fact table to find the most recent month (`MonthYR`) for which customer acquisition data is available (typically the last two months).
+
+3. **Decide Which Month to Use for Reporting**  
+    The measure applies the following logic:
+    - If the selected month index is less than or equal to the latest available month index plus one, use the selected month (or the previous month if the selected week is ahead by one).
+    - If the selected month index is greater than the latest available month index plus one, use the latest available month with data.
+
+This ensures the measure always uses the most relevant and available month for calculations, even if the selected week is ahead of the latest data.
+
+#### Example Scenarios
+
+| Scenario                                                    | Selected Month Index | Latest Data Month Index | Logic Applied                        | Month Used for CA |
+|:------------------------------------------------------------|:--------------------:|:----------------------:|:--------------------------------------|:-----------------:|
+| 1. User selects 3rd week of July, latest data is June       |          7           |           6            | 7 ≤ 6 + 1 → Use previous month: 7 - 1 = 6 |      June        |
+| 2. User selects a week in August, latest data is June       |          8           |           6            | 8 ≤ 6 + 1 → False, use latest available month |      June        |
+| 3. User selects 2nd week of February, latest data is June   |          2           |           6            | 2 ≤ 6 + 1 → True, use selected month        |   February       |
+
+This logic ensures that:
+
+- If the user selects a week in a month for which data is not yet available, the measure defaults to the latest available month.
+- If the user selects a week in a month for which data is available, the measure uses that month.
+- If the user selects a week in a past month (for which data is available), the measure uses the selected month.
+
+This approach guarantees that customer acquisition reporting is always accurate and up-to-date, reflecting the most relevant data available.
+
+
+
+## Total Spend Calculated Column
+
+The Total Spend calculated column is used in both dashboards (ATR and WMP). It displays either the actual or planned spend for each row, or 0, depending on the context—specifically, whether actual or planned spend should be shown. This is necessary because the GMT table contains both planned and actual spend values in the same table.
+
+Using a calculated column instead of a measure provides greater consistency and flexibility: the result is always the same for each row, regardless of any filters applied in visuals. In contrast, a measure could change its value depending on the filters, which may not be desirable for reporting purposes.
+
+## The Index Logic to allow for dynamic year changes
+
+To support dynamic year changes and accurate time-based calculations, we have implemented an index logic in the master date table. Each unique combination of week and year is assigned a sequential index (e.g., `WeekIndex`). This index is referenced in measures and calculations, enabling dashboards to seamlessly handle week-over-week or year-over-year comparisons—even when weeks span across different years.
+
+### Why Use an Index?
+
+When calculating rolling averages (such as 4-week or 12-week averages), simply subtracting a fixed number from the selected week number does not work if the calculation crosses a year boundary. The index solves this by providing a continuous sequence across years.
+
+### How It Works
+
+- The master date table contains a column (e.g., `WeekIndex`) that uniquely identifies each week, incrementing across years.
+- Measures use the selected week’s index to determine the correct range for calculations.
+- For example, to calculate a 4-week average, the measure filters data where `WeekIndex` is between the selected index and (selected index - 3), regardless of year.
+
+This approach ensures that time-based calculations remain accurate and robust, even as users select weeks from different years.
+
+**Example:**
+
+Suppose a user selects the first week of a new year. The index logic allows the measure to include the last weeks of the previous year in rolling calculations, ensuring continuity and correctness.
+
+This method is essential for scenarios where rolling averages or comparisons span multiple years, providing consistent and reliable results in your dashboards.
+
+## Integrating Asana into Power BI
+
+You can connect Asana to Power BI to automatically import and visualize project tasks.
+
+### How to Connect Asana as a Data Source
+
+1. In Power BI Desktop, click **Home > Get Data > More...**.
+2. Search for "Asana" and select it as a data source.
+3. Paste the link to the specific Asana project you want to connect to.
+4. Follow the prompts to authenticate and load your data.
+
+### Managing Tasks for Power BI Dashboards
+
+- To include a new task in your dashboard, simply create it in Asana and apply the appropriate tag.
+- The following tags are used to categorize tasks:
+    - `Patch Notes ATR`
+    - `Patch Notes WMP`
+    - `Refresh`
+- Use the "Patch Notes" tags for patch note items and the "Refresh" tag for refresh-related tasks.
+
+The Power BI setup is configured to automatically fetch all tasks with these tags, ensuring your dashboards are always up to date with the latest relevant items from Asana.
+
+
+

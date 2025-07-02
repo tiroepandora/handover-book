@@ -1,0 +1,402 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Handover Student Assistent",
+    "section": "",
+    "text": "Glad to have you on the team!\nThis handbook is here to help you settle in and get up to speed. Inside, you’ll find tips and resources to make your job easier, like:\n\nOperational Tasks: What you’ll be doing day-to-day.\nDashboards: How our dashboards work, with examples, screenshots, and code snippets.\nSpecific Explanations: Explanations for specific features and measures in our dashboards.\nGoogle Cloud Platform (GCP): How to use the GCP tools we need.\nTabular Editor: How to handle data models with Tabular Editor.\nProject Ideas: Things you can work on, including ongoing projects you might want to pick up.\nUseful Links: Handy resources and docs.\nHR Tips: How to do things like submit timesheets and manage your schedule.\n\nCheck back here whenever you need a reminder or want to learn something new.\nStarting a new job can feel overwhelming, but you’ll pick things up quickly. If you get stuck or have questions, just ask Tomas—he’s always happy to help.\nAll the best, and enjoy your time here!\n\nTim",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction</span>"
+    ]
+  },
+  {
+    "objectID": "operational_tasks.html",
+    "href": "operational_tasks.html",
+    "title": "2  Operational Tasks",
+    "section": "",
+    "text": "2.1 Weekly Task Overview\nThis section outlines the key operational tasks I regularly managed. These activities are crucial for keeping our dashboards current and ensuring timely data sharing with stakeholders.\nOperational tasks are divided between you and Tomas. You can find and track these tasks on the team’s Asana board, where they are tagged as operational:\nAdditionally, Tomas has prepared a detailed file describing each operational task and the steps required to complete them:\nBelow, you will find further explanations about the specific tasks I managed and those you will now be responsible for.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Operational Tasks</span>"
+    ]
+  },
+  {
+    "objectID": "operational_tasks.html#weekly-task-overview",
+    "href": "operational_tasks.html#weekly-task-overview",
+    "title": "2  Operational Tasks",
+    "section": "",
+    "text": "Day\nTask(s)\n\n\n\n\nMonday\nBloomreach Update, Adobe Data\n\n\nTuesday\nLiftLab QA\n\n\nWednesday\nPromo Calendar, Media Spend File (bi-weekly)",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Operational Tasks</span>"
+    ]
+  },
+  {
+    "objectID": "operational_tasks.html#monday",
+    "href": "operational_tasks.html#monday",
+    "title": "2  Operational Tasks",
+    "section": "2.2 Monday",
+    "text": "2.2 Monday\n\n2.2.1 Bloomreach Update\nPurpose:\nEnsure the latest Bloomreach data is shared with LiftLab. Bloomreach manages our customer engagement and marketing data.\n\n2.2.1.1 Steps\n\nReceive Data\n\nEvery Monday at 8 AM, you will receive an email with the previous week’s Bloomreach data at the market level.\nCopy this data from the email into a new Excel file.\nTomas can assist with initial account setup and email scheduling if needed.\n\nCheck and Prepare Data\n\nOnly the most recent week from the Bloomreach email is needed.\nFor US/CA, the email may only include US data. Log in to Bloomreach to ensure both US and CA are covered for the entire week.\nBloomreach Analytics (Login with ‘pandora’ at Bloomreach Engagement if prompted.)\nFilter for the last week, ensuring CA is included. Download the CSV. Merge files if needed.\nReplace the US/CA data in your file with the newly retrieved data (including Canada). Other markets can remain unchanged.\n\n \nFormat and Upload Data\n\nFlip the order of columns: #0 Sent should come before #1 timestamp.\nRemove any unnecessary headers.\nCopy the latest week into the Google Sheet, ensuring the format matches requirements.\nRefer to the Tomas Master Document for detailed steps.\n\nSchedule Backfill in GCP\n\nGCP Scheduled Queries\n\nGenerate and Send CSV\n\nGenerate the CSV of the latest week and send it to LiftLab.\nEmail the CSV to:\npandora-us_datafeed@liftlab.com\nCC: nchalla@liftlab.com, jjohn@liftlab.com\n\n\n\n\n\n\n2.2.2 Adobe Data\nPurpose:\nUpdate the Adobe data used in our All Tides Rise Dashboard.\n\nInstructions:\n\n\nFollow the steps outlined in the Tomas Master Document.\n\n\n\n\n\n\n\nTip\n\n\n\nTroubleshooting:\n\nIf the Adobe Report Builder refresh takes unusually long, try refreshing the page and running the report again.\nIf problems persist, ask Tomas to attempt the refresh from his end.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Operational Tasks</span>"
+    ]
+  },
+  {
+    "objectID": "operational_tasks.html#tuesday",
+    "href": "operational_tasks.html#tuesday",
+    "title": "2  Operational Tasks",
+    "section": "2.3 Tuesday",
+    "text": "2.3 Tuesday\n\n2.3.1 LiftLab QA\nPurpose:\nPerform a quality assurance (QA) check on the data displayed in the LiftLab ROI Dashboard to ensure spend data matches our internal sources.\n\nInstructions:\n\n\n\nEnsure you have access to the LiftLab ROI Dashboard.\nThe dashboard updates every Tuesday; complete your checks on this day.\n\n\nWhat to Check:\nFor each market, verify the spend data for these channels:\n\nPaid Social\nPaid Search\nTV\n\n\n\n\n\n\n\nNote\n\n\n\nIf the spend difference is greater than 2.5%, contact nchalla@liftlab.com and ask for clarification. You may also loop in Kasper if necessary. Use this template for comparing the spend: LiftLab QA\n\n\n\n2.3.1.1 QA Steps\n\nPaid Social\n\nRetrieve spend data from Smartly.io.\nSmartly reports TikTok spend in USD and other channels in local currency. All spend must be converted to local currency for consistency.\nUse the provided Python script to: Python Script\n\nUpload Smartly data.\nConvert currencies as needed.\nAggregate spend by channel and market.\nTransfer the results to the designated Google Sheet for review.\n\nFor questions about Smartly.io or account setup, contact the Paid Social team.\n\nPaid Search\n\nRetrieve spend data directly from the Google Ads interface.\n\n\n\nGoogle Ads Interface\n\n\n\nTV\n\nUse the Media Spend File to check TV spend.\nFilter for TV and compare against the planned budget.\n\n\n\n\n\n\n\n\nTip\n\n\n\n\nAlways ensure currency conversions are correct, especially for TikTok spend.\nUse the Google Sheet to compare and document any discrepancies.\nAutomation is possible but currently limited by login requirements and the need to fetch aggregated reports across markets. LiftLab, in particular, requires market-by-market checking.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Operational Tasks</span>"
+    ]
+  },
+  {
+    "objectID": "operational_tasks.html#wednesday",
+    "href": "operational_tasks.html#wednesday",
+    "title": "2  Operational Tasks",
+    "section": "2.4 Wednesday",
+    "text": "2.4 Wednesday\n\n2.4.1 Promo Calendar\nPurpose:\nShare the promo calendar received from merchandising with LiftLab on a weekly basis.\n\nInstructions: Follow the steps from the master document to complete this task.\n\n\n\n\n2.4.2 Media Spend File (Bi-Weekly)\nPurpose:\nUpdate the media spend file bi-weekly (usually Wednesday).\nInstructions:\n\nTomas first refreshes the file.\nYou must ensure the dashboards are updated by feeding the latest data into the Google Docs, updating the exchange rates, and later sharing the file with LiftLab.\nUse a BI file to refresh spend in the correct format and export the CSV from there.\nSend the CSV to the usual email address:\npandora-us_datafeed@liftlab.com\nCC: nchalla@liftlab.com, jjohn@liftlab.com\n\n\nFor step-by-step instructions, always refer to the Tomas Master Document.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Operational Tasks</span>"
+    ]
+  },
+  {
+    "objectID": "dashboards.html",
+    "href": "dashboards.html",
+    "title": "3  Dashboards",
+    "section": "",
+    "text": "3.1 Dashboards Overview\nWelcome! This section will familiarize you with our dashboards. As a student assistant, you will support Tomas with a variety of tasks, including data updates, new visualizations, bug fixes, and feature development. Rather than a step-by-step Power BI guide, this section gives a brief overview on the dashboards, their important features, and the data sources used in our models.\nYou will primarily work with two dashboards:",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Dashboards</span>"
+    ]
+  },
+  {
+    "objectID": "dashboards.html#dashboards-overview",
+    "href": "dashboards.html#dashboards-overview",
+    "title": "3  Dashboards",
+    "section": "",
+    "text": "3.1.1 1. Weekly Media Plans (WMP)\n\nWMP Dashboard Link\nBased on the global media template, ensuring consistency and alignment across markets.\n\n\n\n3.1.2 2. All Tides Rise (ATR)\n\nATR Dashboard Link\nProvides global and local views of performance indicators and business estimates based on marketing impact.\nFocuses on actionable insights at the market and weekly level.\nDeveloped in collaboration with multiple internal teams to support trade conversations with GMs and above.\n\n\nTip: All other dashboards can be found in the workspace of the Paid Media team. Golabl Paid Media - Dashboards",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Dashboards</span>"
+    ]
+  },
+  {
+    "objectID": "dashboards.html#getting-started",
+    "href": "dashboards.html#getting-started",
+    "title": "3  Dashboards",
+    "section": "3.2 Getting Started",
+    "text": "3.2 Getting Started\nTo begin, familiarize yourself with the dashboards by understanding:\n\nMeasures\nData sources and dataflows\nData model and relationships\n\nJust click through the dashboards and try to understand how",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Dashboards</span>"
+    ]
+  },
+  {
+    "objectID": "dashboards.html#data-modeling-in-power-bi",
+    "href": "dashboards.html#data-modeling-in-power-bi",
+    "title": "3  Dashboards",
+    "section": "3.3 Data Modeling in Power BI",
+    "text": "3.3 Data Modeling in Power BI\n\nLinking Tables: Relationships are created using primary and foreign keys. Selecting the correct cardinality (one-to-one, one-to-many, many-to-many) is crucial.\nThe most used tables are the Master Date Table and the Market Table. These connect to most other tables, providing a common date and market context.\nBackend Adjustments: Most backend data model adjustments can be done in Tabular Editor, which is faster than Power BI Desktop as it does not load frontend visualizations. However, we currently work mostly in the Power Query Editor to manage tables and queries.\nFind more information on Tabular Editor in the respective section of this book.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Dashboards</span>"
+    ]
+  },
+  {
+    "objectID": "dashboards.html#data-sources",
+    "href": "dashboards.html#data-sources",
+    "title": "3  Dashboards",
+    "section": "3.4 Data Sources",
+    "text": "3.4 Data Sources\nEspecially for ATR, we manage a variety of data sources in different formats:\n\nRetail Cube: Company-wide retail data and metrics, connected directly.\nAdobe Data: Stored and connected from BigQuery.\nCustomer Insights Team: Data from Customer Acquisition, often in Excel files.\nGlobal Media Template: Excel file, updated weekly.\nAsana: Task process data fetched into the dashboard (for WMP and ATR).\nBrand Interest & Category Interest: Data from Google, stored in BigQuery.\nExchange Rates, Dates, Market Info: Also stored in BigQuery.\n\n\nThere are more sources you will encounter as you work with the dashboards. Data comes in various formats, offering opportunities for optimization and standardization to reduce maintenance.\n\nWMP uses fewer sources, mainly the global media template, exchange rates, dates, and market information.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Dashboards</span>"
+    ]
+  },
+  {
+    "objectID": "dashboards.html#important-features",
+    "href": "dashboards.html#important-features",
+    "title": "3  Dashboards",
+    "section": "3.5 Important Features",
+    "text": "3.5 Important Features\n\n3.5.1 Spend Conversion to DKK\n\nA calculated column in the planned media spend table converts spend from the GMT to DKK.\nThis is done by multiplying the spend with exchange rates and fees for the respective week and market.\nFees are stored in an Excel file.\n\n\n\n3.5.2 Actualization Logic\n\nThe GMT reports both planned and actual spend.\nTo determine actualization, we compare reported spend at the most granular weekly level (Market, Channel, Subchannel, etc.).\nIf actual spend * 0.5 &gt;= planned spend, it is considered actualized; otherwise, not actualized.\nOnce a week is actualized, all previous weeks are assumed actualized.\nManaged with a calculated column on the planned media spend table.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Dashboards</span>"
+    ]
+  },
+  {
+    "objectID": "dashboards.html#publishing-changes-or-data-refreshes",
+    "href": "dashboards.html#publishing-changes-or-data-refreshes",
+    "title": "3  Dashboards",
+    "section": "3.6 Publishing Changes or Data Refreshes",
+    "text": "3.6 Publishing Changes or Data Refreshes\n\nClick the Publish button and follow the prompts.\nSelect the workspace Global Paid Media.\n\n\n\n\nPublish changes",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Dashboards</span>"
+    ]
+  },
+  {
+    "objectID": "measures.html",
+    "href": "measures.html",
+    "title": "4  Measures",
+    "section": "",
+    "text": "4.1 BrandInterest & Category Interest in BigQuery and PowerBI\nThis section outlines some some features i have created and it is useful to have some documentation for them.\nTo enhance performance and reliability, both BrandInterest and Category Interest calculations are now performed in BigQuery.",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Measures</span>"
+    ]
+  },
+  {
+    "objectID": "measures.html#brandinterest-category-interest-in-bigquery-and-powerbi",
+    "href": "measures.html#brandinterest-category-interest-in-bigquery-and-powerbi",
+    "title": "4  Measures",
+    "section": "",
+    "text": "4.1.1 BrandInterest in BigQuery\nThere are two main views for BrandInterest in BigQuery:\n\nBrandInterestAGG: The primary view containing all key metrics for all markets across the full date range.\nBrandInterestAGG_2: A fallback view that always contains the latest complete week for each market (one row per market). This ensures that if a user selects a week with incomplete data, the dashboard will automatically display the latest available complete week for each market. If the selected week has complete data, the dashboard will show that week as expected. This approach avoids complex workarounds or heavy computations in PowerBI and ensures users always see the most relevant and complete data.\n\nThe same approach is applied to CategoryInterest data.\n\nBrandInterestAGG View\nBrandInterestAGG_2 View\nCategoryInterestAGG View\nCategoryInterestAGG_2 View\n\nThese views are connected to PowerBI, allowing you to use simple measures directly in your visuals. The tables are linked to the master dates table using Week_ForForFive and to the market dimension using the market key.\nBelow is the SQL query for the BrandInterestAGG view, with explanations:\n-- Step 1: Aggregate weekly data per country and map country names to market codes\nWITH Aggregated AS (\n    SELECT \n        b.country,\n        -- Map country names to 2-letter market codes\n        CASE b.country \n            WHEN 'Australia' THEN 'AU' WHEN 'Canada' THEN 'CA' WHEN 'Germany' THEN 'DE'\n            WHEN 'Spain' THEN 'ES' WHEN 'France' THEN 'FR' WHEN 'Italy' THEN 'IT'\n            WHEN 'Poland' THEN 'PL' WHEN 'United Kingdom' THEN 'UK' WHEN 'United States' THEN 'US'\n            WHEN 'China' THEN 'CN' WHEN 'Mexico' THEN 'MX' ELSE 'N/A' \n        END AS Market,\n        MIN(b.date) AS FirstDayOfTheWeek, -- Get the earliest date for the week\n        CAST(m.Week_ForForFive AS INT64) AS Week_ForForFive, -- Week identifier\n        AVG(b.queries) AS Sum_BI, -- Average branded queries for the week\n        MAX(m.WeekDay) AS Max_WeekDay, -- Last day of the week\n        AVG(b.queries / b.total_searches) AS avg_share_of_searches -- Average share of branded queries\n    FROM `pandora-dashboard-data.google_offline_data.branded_searches_backfill` b\n    JOIN `pandora-dashboard-data.Master_Date_Table.master_dates` m\n        ON b.date = PARSE_DATE('%Y-%m-%d', m.DW_TS_From) -- Join on date\n    WHERE b.Brand = \"Pandora\" -- Filter for Pandora brand\n    GROUP BY b.country, m.Week_ForForFive\n),\n\n-- Step 2: Calculate rolling averages for the current year (CY)\nCY AS (\n    SELECT \n        Market, \n        Week_ForForFive, \n        Week_ForForFive - 100 AS Week_ForForFive_LY, -- Calculate last year's week\n        Max_WeekDay, \n        FirstDayOfTheWeek, \n        Sum_BI, \n        avg_share_of_searches,\n        -- 4-week rolling average of Sum_BI (current and next 3 weeks)\n        AVG(Sum_BI) OVER (PARTITION BY Market ORDER BY Week_ForForFive DESC ROWS BETWEEN CURRENT ROW AND 3 FOLLOWING) AS Four_Week_Avg_CY,\n        -- 4-week rolling average of avg_share_of_searches\n        AVG(avg_share_of_searches) OVER (PARTITION BY Market ORDER BY Week_ForForFive DESC ROWS BETWEEN CURRENT ROW AND 3 FOLLOWING) AS Four_Week_Avg_Share_CY,\n        -- 12-week rolling average of Sum_BI\n        AVG(Sum_BI) OVER (PARTITION BY Market ORDER BY Week_ForForFive DESC ROWS BETWEEN CURRENT ROW AND 11 FOLLOWING) AS Twelve_Week_Avg_CY\n    FROM Aggregated\n),\n\n-- Step 3: Calculate rolling averages for the last year (LY)\nLY AS (\n    SELECT \n        Market, \n        Week_ForForFive, \n        Sum_BI, \n        avg_share_of_searches,\n        -- 4-week rolling average for LY\n        AVG(Sum_BI) OVER (PARTITION BY Market ORDER BY Week_ForForFive DESC ROWS BETWEEN CURRENT ROW AND 3 FOLLOWING) AS Four_Week_Avg_LY,\n        -- 12-week rolling average for LY\n        AVG(Sum_BI) OVER (PARTITION BY Market ORDER BY Week_ForForFive DESC ROWS BETWEEN CURRENT ROW AND 11 FOLLOWING) AS Twelve_Week_Avg_LY\n    FROM Aggregated\n)\n\n-- Step 4: Join CY and LY, calculate YOY metrics and lagged values\nSELECT \n    cy.Market, \n    cy.Week_ForForFive, \n    cy.Max_WeekDay, \n    FORMAT_DATE('%Y%m%d', cy.FirstDayOfTheWeek) AS DateKey, -- Format date for reporting\n    cy.Sum_BI, \n    cy.avg_share_of_searches, \n    cy.Four_Week_Avg_CY, \n    cy.Four_Week_Avg_Share_CY, \n    cy.Twelve_Week_Avg_CY,\n    ly.Four_Week_Avg_LY, \n    ly.Twelve_Week_Avg_LY, \n    ly.avg_share_of_searches as avg_share_of_searches_ly,\n\n    -- Year-over-year (YOY) comparisons (as percentages)\n    (cy.Four_Week_Avg_CY / NULLIF(ly.Four_Week_Avg_LY, 0)) * 100 AS Four_Week_YOY,\n    (cy.Twelve_Week_Avg_CY / NULLIF(ly.Twelve_Week_Avg_LY, 0)) * 100 AS Twelve_Week_YOY,\n    (cy.Sum_BI / NULLIF(ly.Sum_BI, 0)) * 100 AS YOY,\n\n    -- Lagged YOY values (next week’s YOY, for trend analysis)\n    LEAD((cy.Four_Week_Avg_CY / NULLIF(ly.Four_Week_Avg_LY, 0)) * 100) OVER (PARTITION BY cy.Market ORDER BY cy.Week_ForForFive DESC) AS Four_Week_YOY_lag,\n    LEAD((cy.Twelve_Week_Avg_CY / NULLIF(ly.Twelve_Week_Avg_LY, 0)) * 100) OVER (PARTITION BY cy.Market ORDER BY cy.Week_ForForFive DESC) AS Twelve_Week_YOY_lag,\n    LEAD((cy.Sum_BI / NULLIF(ly.Sum_BI, 0)) * 100) OVER (PARTITION BY cy.Market ORDER BY cy.Week_ForForFive DESC) AS YOY_lag,\n\n    -- Lagged values for share of searches and rolling averages\n    LEAD(cy.avg_share_of_searches) OVER (PARTITION BY cy.Market ORDER BY cy.Week_ForForFive DESC) AS avg_share_of_searches_CY_lag,\n    LEAD(ly.avg_share_of_searches) OVER (PARTITION BY cy.Market ORDER BY cy.Week_ForForFive DESC) AS avg_share_of_searches_LY_lag,\n    LEAD(cy.Four_Week_Avg_Share_CY) OVER (PARTITION BY cy.Market ORDER BY cy.Week_ForForFive DESC) AS Four_Week_Avg_Share_CY_lag\n\nFROM CY\nLEFT JOIN LY \n    ON cy.Market = ly.Market \n    AND cy.Week_ForForFive_LY = ly.Week_ForForFive -- Join CY with LY by market and week\nORDER BY cy.Market ASC, cy.Week_ForForFive DESC;",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Measures</span>"
+    ]
+  },
+  {
+    "objectID": "measures.html#customer-acquisition",
+    "href": "measures.html#customer-acquisition",
+    "title": "4  Measures",
+    "section": "4.2 Customer Acquisition",
+    "text": "4.2 Customer Acquisition\nWith the integration of Customer Acquisition (CA) into the dashboards, several changes have been made. We now use monthly data for CA reporting.\nCA_Month_YoY_Simplified = \nVAR CurrentYear = [Current Year Number WA]\nVAR SelectedWeek = SELECTEDVALUE('Date'[Week Number int 2])\n\n-- Step 1: Get the MonthIndex for the selected week\nVAR SelectedMonthIndex =\n    CALCULATE(\n        MAX('Date'[YearMonth445]),\n        ALL('Date'),\n        'Date'[Year] = CurrentYear,\n        'Date'[Week Number int 2] = SelectedWeek\n    )\n\n-- Step 2: Find latest populated MonthIndex from the fact table\nVAR LatestMonthNr = \nCALCULATE(\n    MAX('Customer_Acquisition_Monthly'[MonthYR]),\n    TOPN(\n        2,\n        ALL('Customer_Acquisition_Monthly'),\n        'Customer_Acquisition_Monthly'[Year], DESC,\n        'Customer_Acquisition_Monthly'[Month Nr], DESC\n    )\n)\n-- Step 3: Determine which month to use based on the simplified logic\nVAR UseMonth =\n    IF(\n        SelectedMonthIndex &lt;= LatestMonthNr + 1,\n        SelectedMonthIndex - 1,\n        LatestMonthNr\n    )\n\n\n\n-- Step 5: Get values for CY and LY\nVAR CY_Value =\n    CALCULATE(\n        SUM(Customer_Acquisition_Monthly[NbrCustomers]),\n        Customer_Acquisition_Monthly[MonthYR] = UseMonth\n    )\n\nVAR LY_Value =\n    CALCULATE(\n        SUM(Customer_Acquisition_Monthly[NbrCustomers]),\n        Customer_Acquisition_Monthly[MonthYR] = UseMonth - 100\n    )\n\n-- Step 6: Return YoY %\nRETURN\n    DIVIDE(CY_Value * 100, LY_Value, 0)\n\n4.2.1 How the “CA_Month_YOY_Simplified” Measure Works\nThe measure “CA_Month_YOY_Simplified” calculates the Year-over-Year (YoY) change in customer acquisition for a selected week. It determines the relevant month based on the selected week and the latest available data, then compares the number of customers acquired in that month for the current year and the previous year.\n\n4.2.1.1 Step-by-Step Logic\n\nDetermine the Month for the Selected Week\nThe measure identifies which month (using the YearMonth445 field) the selected week falls into.\nFind the Latest Populated Month in the Fact Table\nIt checks the fact table to find the most recent month (MonthYR) for which customer acquisition data is available (typically the last two months).\nDecide Which Month to Use for Reporting\nThe measure applies the following logic:\n\nIf the selected month index is less than or equal to the latest available month index plus one, use the selected month (or the previous month if the selected week is ahead by one).\nIf the selected month index is greater than the latest available month index plus one, use the latest available month with data.\n\n\nThis ensures the measure always uses the most relevant and available month for calculations, even if the selected week is ahead of the latest data.\n\n\n4.2.1.2 Example Scenarios\n\n\n\n\n\n\n\n\n\n\nScenario\nSelected Month Index\nLatest Data Month Index\nLogic Applied\nMonth Used for CA\n\n\n\n\n1. User selects 3rd week of July, latest data is June\n7\n6\n7 ≤ 6 + 1 → Use previous month: 7 - 1 = 6\nJune\n\n\n2. User selects a week in August, latest data is June\n8\n6\n8 ≤ 6 + 1 → False, use latest available month\nJune\n\n\n3. User selects 2nd week of February, latest data is June\n2\n6\n2 ≤ 6 + 1 → True, use selected month\nFebruary\n\n\n\nThis logic ensures that:\n\nIf the user selects a week in a month for which data is not yet available, the measure defaults to the latest available month.\nIf the user selects a week in a month for which data is available, the measure uses that month.\nIf the user selects a week in a past month (for which data is available), the measure uses the selected month.\n\nThis approach guarantees that customer acquisition reporting is always accurate and up-to-date, reflecting the most relevant data available.",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Measures</span>"
+    ]
+  },
+  {
+    "objectID": "measures.html#total-spend-calculated-column",
+    "href": "measures.html#total-spend-calculated-column",
+    "title": "4  Measures",
+    "section": "4.3 Total Spend Calculated Column",
+    "text": "4.3 Total Spend Calculated Column\nThe Total Spend calculated column is used in both dashboards (ATR and WMP). It displays either the actual or planned spend for each row, or 0, depending on the context—specifically, whether actual or planned spend should be shown. This is necessary because the GMT table contains both planned and actual spend values in the same table.\nUsing a calculated column instead of a measure provides greater consistency and flexibility: the result is always the same for each row, regardless of any filters applied in visuals. In contrast, a measure could change its value depending on the filters, which may not be desirable for reporting purposes.",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Measures</span>"
+    ]
+  },
+  {
+    "objectID": "measures.html#the-index-logic-to-allow-for-dynamic-year-changes",
+    "href": "measures.html#the-index-logic-to-allow-for-dynamic-year-changes",
+    "title": "4  Measures",
+    "section": "4.4 The Index Logic to allow for dynamic year changes",
+    "text": "4.4 The Index Logic to allow for dynamic year changes\nTo support dynamic year changes and accurate time-based calculations, we have implemented an index logic in the master date table. Each unique combination of week and year is assigned a sequential index (e.g., WeekIndex). This index is referenced in measures and calculations, enabling dashboards to seamlessly handle week-over-week or year-over-year comparisons—even when weeks span across different years.\n\n4.4.1 Why Use an Index?\nWhen calculating rolling averages (such as 4-week or 12-week averages), simply subtracting a fixed number from the selected week number does not work if the calculation crosses a year boundary. The index solves this by providing a continuous sequence across years.\n\n\n4.4.2 How It Works\n\nThe master date table contains a column (e.g., WeekIndex) that uniquely identifies each week, incrementing across years.\nMeasures use the selected week’s index to determine the correct range for calculations.\nFor example, to calculate a 4-week average, the measure filters data where WeekIndex is between the selected index and (selected index - 3), regardless of year.\n\nThis approach ensures that time-based calculations remain accurate and robust, even as users select weeks from different years.\nExample:\nSuppose a user selects the first week of a new year. The index logic allows the measure to include the last weeks of the previous year in rolling calculations, ensuring continuity and correctness.\nThis method is essential for scenarios where rolling averages or comparisons span multiple years, providing consistent and reliable results in your dashboards.",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Measures</span>"
+    ]
+  },
+  {
+    "objectID": "measures.html#integrating-asana-into-power-bi",
+    "href": "measures.html#integrating-asana-into-power-bi",
+    "title": "4  Measures",
+    "section": "4.5 Integrating Asana into Power BI",
+    "text": "4.5 Integrating Asana into Power BI\nYou can connect Asana to Power BI to automatically import and visualize project tasks.\n\n4.5.1 How to Connect Asana as a Data Source\n\nIn Power BI Desktop, click Home &gt; Get Data &gt; More….\nSearch for “Asana” and select it as a data source.\nPaste the link to the specific Asana project you want to connect to.\nFollow the prompts to authenticate and load your data.\n\n\n\n4.5.2 Managing Tasks for Power BI Dashboards\n\nTo include a new task in your dashboard, simply create it in Asana and apply the appropriate tag.\nThe following tags are used to categorize tasks:\n\nPatch Notes ATR\nPatch Notes WMP\nRefresh\n\nUse the “Patch Notes” tags for patch note items and the “Refresh” tag for refresh-related tasks.\n\nThe Power BI setup is configured to automatically fetch all tasks with these tags, ensuring your dashboards are always up to date with the latest relevant items from Asana.",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Measures</span>"
+    ]
+  },
+  {
+    "objectID": "tabular_editor.html",
+    "href": "tabular_editor.html",
+    "title": "5  Tabular Editor",
+    "section": "",
+    "text": "5.1 Introduction to Tabular Editor\nTabular Editor is a powerful tool for developing and maintaining Power BI data models.\nI have explored its capabilities using the free trial version, and I recommend purchasing two individual licenses—one for you and one for Tomas—to unlock the full feature set.\nYou can launch Tabular Editor directly from Power BI via the External Tools section.\nThis integration allows you to load your current data model and make changes seamlessly, without the need to export or re-import files.\nTabular Editor offers an efficient interface for editing tabular data models.\nIt is especially valuable for backend dashboard management, enabling quick updates, advanced scripting, and automation.",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Tabular Editor</span>"
+    ]
+  },
+  {
+    "objectID": "tabular_editor.html#key-features-explored",
+    "href": "tabular_editor.html#key-features-explored",
+    "title": "5  Tabular Editor",
+    "section": "5.2 Key Features Explored",
+    "text": "5.2 Key Features Explored\n\n5.2.1 Best Practice Analyzer (BPA)\n\nI have run the Best Practice Analyzer on the All Tides RIS model using a Best Practices JSON file from GitHub.\nThis tool automatically scans the model for common issues and optimization opportunities, helping us adhere to recommended standards.\nBest Practices JSON file:\nBest Practices JSON\n\n\n\n5.2.2 Tabular Object Model (TOM) Access\n\nTabular Editor provides direct access to the Tabular Object Model (TOM), allowing us to inspect and edit the structure of our data models.\nThis enables advanced modifications and efficient automation of repetitive tasks.\n\n\n\n5.2.3 Dependency Visualization\n\nThe dependency visualization feature helps us understand relationships between tables, measures, and columns.\nIt is useful for identifying potential issues before making changes.\n\n\n\n5.2.4 Diagram Mode\n\nDiagram Mode offers a clear graphical overview of our data model, making it easier to communicate design choices and understand the overall structure.\n\n\n\n5.2.5 C# Scripting\n\nTabular Editor supports C# scripting, which enables automation of repetitive tasks and customization of model management processes.\nWith C# scripts, we can batch-create measures, automate formatting, enforce naming conventions, and apply best practices across multiple models efficiently.\nLeveraging C# scripting will be especially valuable for our future dashboard management, as it allows us to standardize processes, reduce manual errors, and accelerate development.\nAs our models grow in complexity, scripting will help us maintain consistency and implement changes at scale with minimal effort.",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Tabular Editor</span>"
+    ]
+  },
+  {
+    "objectID": "tabular_editor.html#getting-started",
+    "href": "tabular_editor.html#getting-started",
+    "title": "5  Tabular Editor",
+    "section": "5.3 Getting Started",
+    "text": "5.3 Getting Started\nWatch this useful introduction video:\nTabular Editor for Power BI",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Tabular Editor</span>"
+    ]
+  },
+  {
+    "objectID": "google_cloud_platforms.html",
+    "href": "google_cloud_platforms.html",
+    "title": "6  Google Cloud Platform (GCP)",
+    "section": "",
+    "text": "6.1 Introduction to Google Cloud Platform (GCP)\nThis section provides an overview of the Google Cloud Platform (GCP) tools we use for data management and analysis. GCP is essential for our data operations, enabling us to store, process, and analyze large datasets efficiently.\nGoogle Cloud Platform (GCP) is a suite of cloud computing services offered by Google. It provides a comprehensive set of tools for computing, storage, networking, big data, machine learning, and application development. GCP allows organizations to build, deploy, and scale applications and data solutions efficiently and securely.",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Google Cloud Platform (GCP)</span>"
+    ]
+  },
+  {
+    "objectID": "google_cloud_platforms.html#introduction-to-google-cloud-platform-gcp",
+    "href": "google_cloud_platforms.html#introduction-to-google-cloud-platform-gcp",
+    "title": "6  Google Cloud Platform (GCP)",
+    "section": "",
+    "text": "6.1.1 Key Functions of GCP\n\nCompute: Virtual machines, containers, and serverless computing for running applications and services.\nStorage: Scalable object storage, file storage, and databases for managing structured and unstructured data.\nNetworking: Secure, high-performance networking solutions, including virtual private clouds and load balancing.\nBig Data & Analytics: Tools for data processing, analysis, and visualization, such as BigQuery and Dataflow.\nMachine Learning & AI: Pre-built and custom machine learning models, APIs, and infrastructure for AI workloads.\nSecurity & Identity: Comprehensive security, identity, and access management features to protect data and resources.\n\nGCP’s integrated services streamline workflows, improve collaboration, and support data-driven decision-making across the organization.\nBigQuery Tutorial (YouTube)",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Google Cloud Platform (GCP)</span>"
+    ]
+  },
+  {
+    "objectID": "google_cloud_platforms.html#how-we-use-gcp",
+    "href": "google_cloud_platforms.html#how-we-use-gcp",
+    "title": "6  Google Cloud Platform (GCP)",
+    "section": "6.2 How We Use GCP",
+    "text": "6.2 How We Use GCP\nWe leverage GCP for:\n\nStoring and managing our data\nData manipulation and transformation (using views)\nAutomating data updates with scheduled queries\nMachine learning tasks and coding with Vertex AI\nServerless computing tasks with Cloud Functions\nData warehousing and analytics with BigQuery",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Google Cloud Platform (GCP)</span>"
+    ]
+  },
+  {
+    "objectID": "google_cloud_platforms.html#your-main-activities-in-gcp",
+    "href": "google_cloud_platforms.html#your-main-activities-in-gcp",
+    "title": "6  Google Cloud Platform (GCP)",
+    "section": "6.3 Your Main Activities in GCP",
+    "text": "6.3 Your Main Activities in GCP\nAs part of your role, your primary activities in GCP include:\n\nBackfilling data as part of operational tasks\nCreating and managing scheduled queries to automate data updates\nManaging tables and views in BigQuery\nUsing Vertex AI for machine learning tasks and coding\nMaintaining Cloud Functions for serverless computing tasks",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Google Cloud Platform (GCP)</span>"
+    ]
+  },
+  {
+    "objectID": "project_ideas.html",
+    "href": "project_ideas.html",
+    "title": "7  Project Ideas",
+    "section": "",
+    "text": "7.1 Dashboard Optimization\nBelow are some project ideas that could be useful for the team or for your own learning. These are suggestions—feel free to pick up any that interest you.\nI have started working on optimizing dashboard loading times, especially for All Tides Rise (ATR). After analyzing the loading times, I identified the main contributors to slow performance.",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Project Ideas</span>"
+    ]
+  },
+  {
+    "objectID": "project_ideas.html#dashboard-optimization",
+    "href": "project_ideas.html#dashboard-optimization",
+    "title": "7  Project Ideas",
+    "section": "",
+    "text": "7.1.1 What has been done so far\n\nPerformance Analysis:\nI analyzed dashboard loading times and identified bottlenecks. You can run your own performance analysis using the Power BI Performance Analyzer to see which visuals or queries take the most time to load.\nA performance report (JSON file) will be linked for reference.\n\n\n\nPerformance Analyzer\n\n\nBackend Optimization:\nCalculations (e.g., 4-week averages, 12-week averages, long table filtering) were previously handled within Power BI, which slowed down performance. I have started moving these calculations and aggregations to BigQuery, using SQL scripts and views.\nFor example, brand and category interest data are now calculated in BigQuery and pulled directly into Power BI, resulting in a more efficient data model and faster loading times.\nData Model Cleanup:\nDuring development, redundant measures often accumulate in the Power BI data model. I have started deleting unused measures (about 30% so far) in the ATR model.\nI used Tabular Editor to identify all measures and then manually checked if they were used in visuals, as Tabular Editor is mainly backend-focused and cannot fully analyze frontend usage.\nI have documented my steps and will link a file so you can continue this work.\n\n\n\nTabular Editor Measure Cleanup\n\n\n\n\n7.1.1.1 Opportunities for further work\n\nContinue cleaning up unused measures in ATR and other dashboards.\nExplore optimizing other dashboards, though ATR is currently the most complex.\nUse Tabular Editor and C# scripts to work with the data model (see the chapter on Tabular Editor for more details).\nConsider moving additional heavy calculations and aggregations outside of Power BI.",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Project Ideas</span>"
+    ]
+  },
+  {
+    "objectID": "project_ideas.html#general-recommendations",
+    "href": "project_ideas.html#general-recommendations",
+    "title": "7  Project Ideas",
+    "section": "7.2 General Recommendations",
+    "text": "7.2 General Recommendations\n\nMoving heavy calculations and aggregations outside of Power BI will benefit future projects.\nTomas is investigating a long-term migration from BigQuery (currently used only by our team) to Databricks, the company-wide data warehouse.\nBigQuery gives us full ownership and admin rights, but requires manual data maintenance.\nDatabricks will be a more sustainable, company-wide solution, though the migration timeline is still unclear.\nKeep this in mind for future projects.",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Project Ideas</span>"
+    ]
+  },
+  {
+    "objectID": "project_ideas.html#automation-of-operational-tasks",
+    "href": "project_ideas.html#automation-of-operational-tasks",
+    "title": "7  Project Ideas",
+    "section": "7.3 Automation of Operational Tasks",
+    "text": "7.3 Automation of Operational Tasks\n\nAutomating repetitive operational tasks is definitely worthwhile.\nManual logins can make automation challenging.\nI have experimented with different solutions using API keys (e.g., Google Search, Adobe Analytics, Asana).\nI was successful with Asana, but other APIs may require more setup or are not compatible with our environment.\nI encourage you to explore automation opportunities—these tasks recur weekly and can become tedious over time.\nMaking them smarter and more efficient will save time in the long run.",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Project Ideas</span>"
+    ]
+  },
+  {
+    "objectID": "project_ideas.html#using-predictive-analytics-for-measurement-efforts",
+    "href": "project_ideas.html#using-predictive-analytics-for-measurement-efforts",
+    "title": "7  Project Ideas",
+    "section": "7.4 Using Predictive Analytics for Measurement Efforts",
+    "text": "7.4 Using Predictive Analytics for Measurement Efforts\nI have had a class on predictive analytics. Predictive analytics can enhance our measurement efforts by providing deeper insights and more accurate forecasts. By leveraging historical data and advanced algorithms, we can identify trends, anticipate outcomes, and make data-driven decisions.\n\nTip:\nIf you are interested in exploring predictive analytics—such as forecasting, anomaly detection, or advanced modeling—reach out to Kasper.\nHe is open to discussing ideas and would welcome collaboration on integrating these techniques into our measurement work.",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Project Ideas</span>"
+    ]
+  },
+  {
+    "objectID": "project_ideas.html#leveraging-ai-and-machine-learning",
+    "href": "project_ideas.html#leveraging-ai-and-machine-learning",
+    "title": "7  Project Ideas",
+    "section": "7.5 Leveraging AI and Machine Learning",
+    "text": "7.5 Leveraging AI and Machine Learning\nRecently, we completed a project leveraging AI for content classification—including images, articles, and videos—using Vertex AI and BigQuery. This initiative provided valuable insights into how large language models (LLMs) can accelerate workflows and unlock new efficiencies.\n\nThe experience highlighted both the power and potential of AI-driven solutions for our team.\nIf you’re interested, I can share the presentation we delivered to the broader group, which covers our approach and key learnings.\n\nAI Project Presentation \nCode File\nExploring LLMs was both impactful and enjoyable, and I believe there are many more opportunities where these technologies could benefit our work.\nIf you’re interested in applying AI or machine learning to future projects, I encourage you to get involved—there is significant potential for innovation and impact within the team.",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Project Ideas</span>"
+    ]
+  },
+  {
+    "objectID": "project_ideas.html#centralized-documentation-for-data-processes",
+    "href": "project_ideas.html#centralized-documentation-for-data-processes",
+    "title": "7  Project Ideas",
+    "section": "7.6 Centralized Documentation for Data Processes",
+    "text": "7.6 Centralized Documentation for Data Processes\nProposal:\nSet up a structured documentation space in Confluence to serve as the single source of truth for our data processes.\nThis would include:\n\nData pipeline overviews and architecture diagrams\nDocumentation of recurring data tasks and their owners\nGuides for onboarding new team members to our data stack\nStandard operating procedures for data ingestion, transformation, and reporting\nTroubleshooting guides and FAQs\n\nBenefits:\n- Reduces onboarding time for new team members\n- Minimizes knowledge loss when people transition roles\n- Improves consistency and quality of our data work\n- Makes it easier to identify and address process gaps\nIf you are interested in knowledge management, technical writing, or improving team efficiency, this is a high-impact project that will benefit everyone.",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Project Ideas</span>"
+    ]
+  },
+  {
+    "objectID": "useful_links.html",
+    "href": "useful_links.html",
+    "title": "8  Useful Links",
+    "section": "",
+    "text": "A collection of helpful resources and references.\n\n\nInternal Portals\n\nPandoraNet SharePoint\nInternal documentation and resources.\nPandora Digital Wiki\nTeam knowledge base.\nGlobal Assets Home\nAsset management portal.\n\n\n\n\nProject Management\n\nAsana Board\nTask and project tracking.\n\n\n\n\nCoding & Data Warehouse\n\nGoogle Colab\nCloud-based Python notebooks.\nVertex AI Notebooks\nManaged Jupyter notebooks.\nBigQuery Console\nData warehouse management.\n\n\n\n\nDashboards & Analytics\n\nPower BI\nBusiness intelligence dashboards.\nLiftLab Dashboard\nAnalytics platform.\nAdobe Analytics\nWeb analytics.\nGoogle Search Ads\nSearch ads management.\n\n\n\n\nHR & Scheduling\n\nLearning\nTraining portal.\nSameSystem\nScheduling tool.\nSuccessFactors Performance Manager\nPerformance management.\n\n\n\n\nSpreadsheets\n\nGoogle Sheet: Media Spend\nMedia spend tracking.\nGoogle Sheet: LL QA\nQA documentation.",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Useful Links</span>"
+    ]
+  },
+  {
+    "objectID": "hr.html",
+    "href": "hr.html",
+    "title": "9  HR",
+    "section": "",
+    "text": "9.1 Timesheet Submission\nThis chapter provides essential information about HR processes at Pandora.",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>HR</span>"
+    ]
+  },
+  {
+    "objectID": "hr.html#timesheet-submission",
+    "href": "hr.html#timesheet-submission",
+    "title": "9  HR",
+    "section": "",
+    "text": "Monthly Timesheet:\nYou are required to submit a monthly timesheet, logging your working hours for each day.\nPay Periods:\nPay periods typically run from the 11th of one month to the 10th of the next month.\nEnsure all hours are logged by the 10th of each month.\nApproval:\nKasper will review and approve your submitted hours.",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>HR</span>"
+    ]
+  },
+  {
+    "objectID": "hr.html#payroll",
+    "href": "hr.html#payroll",
+    "title": "9  HR",
+    "section": "9.2 Payroll",
+    "text": "9.2 Payroll\n\nPayment Date:\nSalary is usually paid on the 25th of each month.\nIf the 25th falls on a weekend or holiday, payment may be processed on a different day.\nExample:\nOn September 25th, you will receive payment for hours worked from August 11th to September 10th.",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>HR</span>"
+    ]
+  },
+  {
+    "objectID": "hr.html#learning-activities",
+    "href": "hr.html#learning-activities",
+    "title": "9  HR",
+    "section": "9.3 Learning Activities",
+    "text": "9.3 Learning Activities\n\nAt the beginning of your employment, you will be assigned learning activities.\nNew chapters and materials will be sent to you periodically.",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>HR</span>"
+    ]
+  },
+  {
+    "objectID": "hr.html#goals-and-feedback",
+    "href": "hr.html#goals-and-feedback",
+    "title": "9  HR",
+    "section": "9.4 Goals and Feedback",
+    "text": "9.4 Goals and Feedback\nIt makes sense for you to define your own goals after some time in the role, once you have a better understanding of your tasks and responsibilities. It is not mandatory for student assistants but it is definitely encouraged.",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>HR</span>"
+    ]
+  },
+  {
+    "objectID": "hr.html#support",
+    "href": "hr.html#support",
+    "title": "9  HR",
+    "section": "9.5 Support",
+    "text": "9.5 Support\n\nIf you have questions, you can:\n\nEmail: DKHR@pandora.net\nAsk in the student Teams chat\nAsk Tomas",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>HR</span>"
+    ]
+  }
+]

@@ -1,0 +1,796 @@
+Table Name, Measure Name,Status
+Date, Week NUmber selected,
+Date, current_week_display,used
+Date, next_week_display,
+Date, next_week,
+Date, Current Year Number,used
+Date, Weeks_in_year_UPDATE_ME,used
+Date, CHECK WEEKINDEX,
+Date, FirstDayOfNextWeek,used
+Date, FirstDayOfWeekAfterNext,used
+Date, FirstDayOfThirdUpcomingWeek,used
+Date, FirstDayOf4thUpcomingWeek,used
+Market Hierarchy, TT_ServiceNow,used
+Metrics, ASP CY,used
+Metrics, Basket Value CY,
+Metrics, Conversion CY,
+Metrics, LFL ASP %,
+Metrics, LFL ASP CY,
+Metrics, LFL ASP LY,
+Metrics, LFL Basket Value %,
+Metrics, LFL Basket Value CY,used
+Metrics, LFL Basket Value LY,used
+Metrics, LFL Conversion Rate %,
+Metrics, LFL Conversion Rate CY,
+Metrics, LFL Conversion Rate LY,
+Metrics, LFL Sell Out CY,used
+Metrics, LFL Sell Out LY,used
+Metrics, LFL Sell Out per sqr meter %,
+Metrics, LFL Sell Out per sqr meter CY,
+Metrics, LFL Sell Out per sqr meter LY,
+Metrics, LFL Sell Out Store Count,
+Metrics, LFL Transaction % (Store w/Traffic),
+Metrics, LFL Transaction %,
+Metrics, LFL Transaction CY,used
+Metrics, LFL Transaction LY,used
+Metrics, LFL Transactions CY (Stores w/ Traffic),
+Metrics, LFL Transactions LY (Stores w/ Traffic),
+Metrics, LFL Units %,
+Metrics, LFL Units CY,
+Metrics, LFL Units LY,
+Metrics, LFL UPT %,
+Metrics, LFL UPT CY,
+Metrics, LFL UPT LY,
+Metrics, LFL Visitor Count CY,used
+Metrics, LFL Visitor Count LY,used
+Metrics, LFL Visitors %,
+Metrics, Quantity Movement,
+Metrics, Retail Value DKK,
+Metrics, RetailDaily_TransactionCount,
+Metrics, RetailDaily_TransactionsStoresWithVisitorCount,
+Metrics, RetailWeekly_TransactionCountCY,
+Metrics, RetailWeekly_TransactionCountLY,
+Metrics, RetailWeekly_TransactionCountStoresWithVisitorCountCY,
+Metrics, RetailWeekly_TransactionCountStoresWithVisitorCountLY,
+Metrics, RetailWeekly_VisitorCountCY,
+Metrics, Sell Out (LFL rates) %,
+Metrics, Sell Out (LFL Rates) CY,
+Metrics, Sell Out (LFL Rates) LY,
+Metrics, Sell Out CY,
+Metrics, Sell Out DKK Budget CY,
+Metrics, Sell Out per sqr meter CY,
+Metrics, Sell Out Store Count,
+Metrics, SellOutDaily_SalesArea,
+Metrics, SelloutDaily_Units,
+Metrics, SellOutWeekly_LFLUnitsCY,
+Metrics, SellOutWeekly_LFLUnitsLY,
+Metrics, SellOutWeekly_SalesArea,
+Metrics, Transaction CY,
+Metrics, Transaction CY (Stores w/ Traffic),
+Metrics, Units CY,
+Metrics, UPT CY,
+Metrics, Visitors CY,
+Metrics, Quantity On Hand,
+Metrics, SellOutDaily_Sell Out DKK Budget LCY,
+Metrics, RetailWeekly_VisitorCountLY,
+Metrics, Stock_RetailValueDKK,
+Metrics, Adjustment Quantity,
+Metrics, Counted Quantity,
+Metrics, Days In Transit,
+Metrics, On Hand Quantity,
+Metrics, Ordered Purchase Quantity,
+Metrics, Received Purchase Quantity,
+Metrics, Remaining Purchase Quantity,
+Metrics, LFL Sell Out %,
+Metrics, SellOutDaily_SellOut_LCY,
+Metrics, SellOutWeekly_LFLSalesCY_LCY,
+Metrics, SellOutWeekly_LFLSalesLY_LCY,
+Metrics, SellOutDaily_SellOut_DKK,
+Metrics, SellOutDaily_SellOut_EUR,
+Metrics, SellOutDaily_SellOut_USD,
+Metrics, SellOutDaily_SellOut_GBP,
+Metrics, SellOutDaily_SellOut_CNY,
+Metrics, SellOutDaily_SellOut_AUD,
+Metrics, SellOutWeekly_LFLSalesCY_DKK,
+Metrics, SellOutWeekly_LFLSalesCY_EUR,
+Metrics, SellOutWeekly_LFLSalesCY_USD,
+Metrics, SellOutWeekly_LFLSalesCY_GBP,
+Metrics, SellOutWeekly_LFLSalesCY_CNY,
+Metrics, SellOutWeekly_LFLSalesCY_AUD,
+Metrics, SellOutWeekly_LFLSalesLY_DKK,
+Metrics, SellOutWeekly_LFLSalesLY_EUR,
+Metrics, SellOutWeekly_LFLSalesLY_USD,
+Metrics, SellOutWeekly_LFLSalesLY_GBP,
+Metrics, SellOutWeekly_LFLSalesLY_CNY,
+Metrics, SellOutWeekly_LFLSalesLY_AUD,
+Metrics, SellOutDaily_SellOut_LFL_DKK,
+Metrics, SellOutDaily_SellOut_LFL_EUR,
+Metrics, SellOutDaily_SellOut_LFL_USD,
+Metrics, SellOutDaily_SellOut_LFL_GBP,
+Metrics, SellOutDaily_SellOut_LFL_CNY,
+Metrics, SellOutDaily_SellOut_LFL_AUD,
+Metrics, SellOutDaily_SellOut_LCY LY,
+Metrics, TrafficDaily_VisitorCount,
+Metrics, Transaction CY (Detail),
+Metrics, Transaction CY (Stores w/ Traffic) (Detail),
+Metrics, Conversion CY (Detail),
+Metrics, SelloutDaily_TransactionCount,
+Metrics, SelloutDaily_TransactionWithTrafficCount,
+Metrics, UPT CY (Detail),
+Metrics, Basket Value CY (Detail),
+Metrics, LFL Transaction CY (Detail),
+Metrics, LFL Transaction LY (Detail),
+Metrics, LFL Transaction CY (Stores w/ Traffic) (Detail),
+Metrics, LFL Transaction LY (Stores w/ Traffic) (Detail),
+Metrics, LFL Transaction % (Detail),
+Metrics, LFL Transaction % (Store w/Traffic) (Detail),
+Metrics, LFL Conversion Rate CY (Detail),
+Metrics, LFL Conversion Rate LY (Detail),
+Metrics, LFL Conversion Rate % (Detail),
+Metrics, LFL UPT CY (Detail),
+Metrics, LFL UPT LY (Detail),
+Metrics, LFL UPT % (Detail),
+Metrics, LFL Basket Value CY (Detail),
+Metrics, LFL Basket Value LY (Detail),
+Metrics, LFL Basket Value % (Detail),
+Metrics, SellOutDaily_SellOut_PLN,
+Metrics, SellOutDaily_SellOut_LFL_PLN,
+Metrics, SellOutWeekly_LFLSalesCY_PLN,
+Metrics, SellOutWeekly_LFLSalesLY_PLN,
+Metrics, HFM Budget LFL Sales CY,
+Metrics, HFM Budget LFL Sales LY,
+Metrics, HFM Budget LFL Traffic CY,
+Metrics, HFM Budget LFL Traffic LY,
+Metrics, HFM Budget LFL Transactions CY,
+Metrics, HFM Budget LFL Transactions LY,
+Metrics, HFM Budget LFL Units CY,
+Metrics, HFM Budget LFL Units LY,
+Metrics, HFM Budget LFL ASP CY,
+Metrics, HFM Budget LFL ASP LY,
+Metrics, HFM Budget LFL Basket CY,
+Metrics, HFM Budget LFL Basket LY,
+Metrics, HFM Budget LFL Conversion CY,
+Metrics, HFM Budget LFL Conversion LY,
+Metrics, HFM Budget LFL UPT CY,
+Metrics, HFM Budget LFL UPT LY,
+Metrics, SellOutWeekly_SalesArea_SumOfMax,
+Metrics, SellOutDaily_SalesArea_SumOfMax,
+Metrics, LFL Sell Out YoY,used
+Metrics, LFL Sell Out & YoY,
+Metrics, Sell Out Budget 2024,
+Metrics, Sell Out Budget 2023,
+Metrics, Sell Out Budget YoY,
+Metrics, VPV CY,
+Metrics, LFL VPV %,
+Metrics, LFL VPV CY,
+Metrics, LFL VPV LY,
+Metrics, LFL Visitors YoY,
+Metrics, Retail LE CY,
+Metrics, Online LE CY,
+Metrics, LFL Visits Count 4 week avg 24,
+Metrics, LFL Visits Count 4 week avg 23,
+Metrics, LFL Visits 4 week avg YoY,
+Metrics, Online LE LY,
+Metrics, Retail LE LY,
+Metrics, Online LE YoY,
+Metrics, Retail LE YoY,
+Metrics, Online LE CY 4 week avg.,
+Metrics, Online LE LY 4 week avg.,
+Metrics, Retail LE LY 4 week avg.,
+Metrics, Retail LE CY 4 week avg.,
+Metrics, Online LE 4 week YoY,
+Metrics, Retail LE 4 week YoY,
+Metrics, Online LE CY 12 week avg.,
+Metrics, Online LE LY 12 week avg.,
+Metrics, Retail LE LY 12 week avg.,
+Metrics, Retail LE CY 12 week avg.,
+Metrics, Retail LE 12 week YoY,
+Metrics, Online LE 12 week YoY,
+Metrics, LFL Sell out + 1 week CY,
+Metrics, LFL Sell out + 2 week CY,
+Metrics, LFL Sell out + 3 week CY,
+Metrics, LFL Sell out + 4 week CY,
+Metrics, LFL Sell out + 1 week LY,
+Metrics, LFL Sell out + 2 week LY,
+Metrics, LFL Sell out + 3 week LY,
+Metrics, LFL Sell out + 4 week LY,
+Metrics, Selected week + 1,used
+Metrics, Selected week + 2,used
+Metrics, Selected week + 3,used
+Metrics, Selected week + 4,used
+Metrics, LFL Sell Out + 1 Week YoY,
+Metrics, LFL Sell Out + 2 Week YoY,
+Metrics, LFL Sell Out + 3 Week YoY,
+Metrics, LFL Sell Out + 4 Week YoY,
+Metrics, Online Visits CY,
+Metrics, Online Visits LY,
+Metrics, Online Visits + 1 week CY,
+Metrics, Online Visits + 2 week CY,
+Metrics, Online Visits + 3 week CY,
+Metrics, Online Visits + 4 week CY,
+Metrics, Online Visits + 1 week LY,
+Metrics, Online Visits + 2 week LY,
+Metrics, Online Visits + 3 week LY,
+Metrics, Online Visits + 4 week LY,
+Metrics, Online Visits + 1 week YoY,
+Metrics, Online Visits + 2 week YoY,
+Metrics, Online Visits + 3 week YoY,
+Metrics, Online Visits + 4 week YoY,
+Metrics, Offline Visits CY,used
+Metrics, Offline Visits LY,used
+Metrics, Offline Visits + 1 week CY,
+Metrics, Offline Visits + 2 week CY,
+Metrics, Offline Visits + 3 week CY,
+Metrics, Offline Visits + 4 week CY,
+Metrics, Offline Visits + 1 week LY,
+Metrics, Offline Visits + 2 week LY,
+Metrics, Offline Visits + 3 week LY,
+Metrics, Offline Visits + 4 week LY,
+Metrics, Offline Visits + 1 week YoY,
+Metrics, Offline Visits + 2 week YoY,
+Metrics, Offline Visits + 3 week YoY,
+Metrics, Offline Visits + 4 week YoY,
+Metrics, Offline Visits + 5 week CY,
+Metrics, Offline Visits YoY,used
+Metrics, a,
+Metrics, LFL total CY,
+Metrics, AOV YoY,used
+Metrics, CVR CY,used
+Metrics, CVR LY,used
+Metrics, CVR YoY,
+Metrics, CVR LY Online,
+Metrics, CVR LY Offline,used
+Metrics, CVR CY Online,
+Metrics, CVR CY Offline,used
+Metrics, CVR YoY Online,
+Metrics, CVR YoY Offline,used
+Metrics, CVR 4w avg 24,used
+Metrics, CVR 4w avg 23,used
+Metrics, CVR 4w avg YoY,
+Metrics, AOV 4 week avg CY,used
+Metrics, AOV 4 week avg LY,used
+Metrics, AOV 4w avg YoY,used
+Metrics, CVR 4 week CY Online,
+Metrics, CVR 4 week CY Offline,
+Metrics, CVR 4 week LY Online,
+Metrics, CVR 4 week LY Offline,
+Metrics, CVR 4w avg Online YoY,
+Metrics, CVR 4w avg Offline YoY,used
+Metrics, CVR 12w avg 23,
+Metrics, CVR 12w avg 24,
+Metrics, CVR 12w avg YoY,
+Metrics, Conversion rate 12 week avg CY,
+Metrics, CVR 12w avg Offline CY V2,
+Metrics, CVR 12w avg Offline LY V2,
+Metrics, Conversion rate 12 week avg LY,
+Metrics, CVR 12w avg Offline YoY,
+Metrics, CVR 12w avg Online YoY,
+Metrics, AOV 12 week avg CY,
+Metrics, AOV 12 week avg LY,
+Metrics, AOV 12w avg YoY,
+Metrics, LFL Basket Value 24,used
+Metrics, LFL Basket Value 23,used
+Metrics, CVR 24,
+Metrics, CVR 23,
+Metrics, LFL total CY string_for_GPG,used
+Metrics, Sell Out Budget YoY string_for_GPG,
+Metrics, Offline Visits 4 week avg YoY With TEXT,used
+Metrics, Online Visits YoY,
+Metrics, Online VISITS LY 4 week avg 23,
+Metrics, Online VISITS CY 4 week avg 24,
+Metrics, Online Visits 4w YoY With TEXT,
+Metrics, AOV 4w avg YoY With TEXT,
+Metrics, CVR 4w avg Offline YoY With TEXT,used
+Metrics, LFL Sell out + 1 from CURRENT week CY,
+Metrics, AOVYoY_12W_SlopeDeviationFromTrend,
+Metrics, AOVYoY_4W_SlopeDeviationFromTrend,
+Metrics, CVRYoYOffline_12W_SlopeDeviationFromTrend,
+Metrics, CVRYoYOffline_4W_SlopeDeviationFromTrend,
+Metrics, CVR 4w avg 24 NEW TEST OFFLINE,
+Metrics, LFL Transaction 2024,
+Metrics, LFL Transaction 2023,
+Metrics, LFL Visitor Count 2024,
+Metrics, LFL Visitor Count 2023,
+Metrics, CVR 12w avg 24 NEW TEST OFFLINE,
+Metrics, LFL Sell Out 2024,used 
+Metrics, LFL Sell Out 2023,used
+Metrics, LFL Sell Out YoY NEW,used
+Metrics, LFL Sell Out CY 4 week avg,used
+Metrics, LFL Sell Out LY 4 week avg,used
+Metrics, LFL Sell Out CY 12 week avg,
+Metrics, LFL Sell Out LY 12 week avg,
+Metrics, LFL Sell Out YoY 4w avg.,
+Metrics, LFL Sell Out YoY 12w avg.,
+Metrics, LFL Sell Out YoY 4 Week Avg string_for_GPG,used
+Metrics, LFL Sell Out LY_string_percent,used
+Metrics, Offline Visits LY 4w Avg,used
+Metrics, Offline Visits YoY 12W Slope_Deviation_from_Trend,
+Metrics, Offline Visits YoY 4W Slope_Deviation_from_Trend,
+Metrics, Offline Visits CY 4w Avg,used
+Metrics, Offline Visits 4 week avg YoY,used
+Metrics, Offline Visits CY 12w Avg,
+Metrics, Offline Visits LY 12w Avg,
+Metrics, Offline Visits 12 week avg YoY,
+Metrics, LFL Sell Out V2,used
+Metrics, Offline Visits V2,used
+Metrics, Offline Visits V22,
+Metrics, GetIndex,
+Metrics, CVR OFFLINE CY V2,used
+Metrics, CVR OFFLINE LY V2,used
+Metrics, CVR 4w avg Offline CY V2,used
+Metrics, CVR 4w avg Offline LY V2,used
+Metrics, Sell Out Budget YoY 2,
+Metrics, Sell Out Budget YoY 12W Slope_Deviation_from_Trend,
+Metrics, Sell Out Budget YoY 4W Slope_Deviation_from_Trend,
+LL_Channel_Level_View, 4 week tread 24 Baseline + Marketing Contribution,deleted
+LL_Channel_Level_View, Actual_mROAS_CY,used
+LL_Channel_Level_View, Affiliate %,deleted
+LL_Channel_Level_View, Affiliate 4 week %,deleted
+LL_Channel_Level_View, Baseline 4 week trend 23,deleted
+LL_Channel_Level_View, Baseline 4 week trend 24,deleted
+LL_Channel_Level_View, Baseline Revenue % 24 4 week trend,deleted
+LL_Channel_Level_View, Baseline Revenue % 24 NEW,deleted
+LL_Channel_Level_View, Baseline Revenue % 4 Week Avg 24,deleted
+LL_Channel_Level_View, Baseline Revenue % CY,used
+LL_Channel_Level_View, Baseline Revenue % CY (4-Week Avg),used
+LL_Channel_Level_View, Baseline Revenue % LY (4-Week Avg),used
+LL_Channel_Level_View, Baseline Revenue 23,deleted
+LL_Channel_Level_View, Baseline Revenue 24,deleted
+LL_Channel_Level_View, Baseline Revenue CY V2,used
+LL_Channel_Level_View, Baseline Revenue LY V2,used
+LL_Channel_Level_View, Baseline Revenue YoY,used
+LL_Channel_Level_View, Baseline YoY Growth 4-week,used
+LL_Channel_Level_View, Channel Contribution %,deleted
+LL_Channel_Level_View, Display %,deleted
+LL_Channel_Level_View, Email %,deleted
+LL_Channel_Level_View, Events %,deleted
+LL_Channel_Level_View, Influencer %,deleted
+LL_Channel_Level_View, iRoas Calc Channel,deleted
+LL_Channel_Level_View, iRoas Spend Baseline V2,deleted
+LL_Channel_Level_View, marketing contribution %,used
+LL_Channel_Level_View, Marketing Contribution % 24 4 week tread,deleted
+LL_Channel_Level_View, Marketing Contribution % 4 Week Avg 24,deleted
+LL_Channel_Level_View, Marketing Contribution % 4W,used
+LL_Channel_Level_View, Marketing Contribution % 4W Avg,deleted
+LL_Channel_Level_View, Marketing Contribution % CY,used
+LL_Channel_Level_View, Marketing Contribution % CY (4-Week Avg),used
+LL_Channel_Level_View, Marketing Contribution % CY (4-Week Avg) V2,deleted
+LL_Channel_Level_View, Marketing Contribution % LY (4-Week Avg),used
+LL_Channel_Level_View, Marketing Contribution 4 week trend  23,deleted
+LL_Channel_Level_View, Marketing Contribution Affiliates % 24,deleted
+LL_Channel_Level_View, Marketing Contribution Affiliates 24,deleted
+LL_Channel_Level_View, Marketing Contribution Display % 24,deleted
+LL_Channel_Level_View, Marketing Contribution Display 24,deleted
+LL_Channel_Level_View, Marketing Contribution Paid Social % 24,deleted
+LL_Channel_Level_View, Marketing Contribution Paid Social 24,deleted
+LL_Channel_Level_View, Marketing Contribution Revenue 23,deleted
+LL_Channel_Level_View, Marketing Contribution Revenue 24 (with 0),used
+LL_Channel_Level_View, Marketing Contribution Revenue CY V2,used
+LL_Channel_Level_View, Marketing Contribution Revenue LY V2,used
+LL_Channel_Level_View, Marketing Contribution Revenue YoY,used
+LL_Channel_Level_View, Marketing Contribution Revenue YoY (with dash),used
+LL_Channel_Level_View, Marketing Contribution Search % 24,deleted
+LL_Channel_Level_View, Marketing Contribution Search 24,deleted
+LL_Channel_Level_View, Marketing Contribution YoY Growth 4-week,used
+LL_Channel_Level_View, Measure,deleted
+LL_Channel_Level_View, mRoas 4 Week Average,deleted
+LL_Channel_Level_View, mRoas 4 Week Average Channel,deleted
+LL_Channel_Level_View, mRoas Calc Channel,deleted
+LL_Channel_Level_View, mRoas Calc Channel Inspecting,deleted
+LL_Channel_Level_View, OLV %,deleted
+LL_Channel_Level_View, Other Offline %,deleted
+LL_Channel_Level_View, Other Online %,deleted
+LL_Channel_Level_View, Paid Social %,deleted
+LL_Channel_Level_View, Paid Social 4 week %,deleted
+LL_Channel_Level_View, PR %,deleted
+LL_Channel_Level_View, PR Partnerships %,deleted
+LL_Channel_Level_View, Search %,deleted
+LL_Channel_Level_View, Search 4 week %,deleted
+LL_Channel_Level_View, Selected week number,deleted
+LL_Channel_Level_View, Test,deleted
+LL_Channel_Level_View, Total Revenue 23,deleted
+LL_Channel_Level_View, Total Revenue 24,deleted
+LL_Channel_Level_View, Total Revenue 4 Week Avg 24,deleted
+LL_Channel_Level_View, Total Revenue YoY,deleted
+LL_Channel_Level_View, TV %,deleted
+LL_Channel_Level_View, Value uplift,deleted
+PitStopLog_CY, This week planned Spend SuM 24 Dynamic,used
+PitStopLog_CY, This week planned Spend SuM 23,
+PitStopLog_CY, This week planned Spend SuM,
+PitStopLog_CY, This week Planned Spend 4 week avg 24,
+PitStopLog_CY, This week Planned Spend 4 week avg 23,
+PitStopLog_CY, Budget Recomendation Spend SuM,
+PitStopLog_CY, Up Spend Potential mDKK,
+PitStopLog_CY, Revenue Uplift mDKK,
+PitStopLog_CY, This week planned Spend SuM 24 ALL,
+PitStopLog_CY, (%) 4 week,
+PitStopLog_CY, mRoas/Target (Non-Promo) 4 Week Average,used
+PitStopLog_CY, Up Spend Potential 4 Week Average,
+PitStopLog_CY, Budget Recomendation Spend SUM 4 week,
+PitStopLog_CY, Revenue Uplift 4w mDKK,
+PitStopLog_CY, Up Spend Potential Local,
+PitStopLog_CY, Revenue Uplift Local,
+PitStopLog_CY, Up Spend Potential mDKK Dynamic,
+PitStopLog_CY, Budget Recomendation Spend SuM Dynamic,
+PitStopLog_CY, Budget Recomendation DKK,used
+PitStopLog_CY, This Week Planned SPEND DKK,used
+PitStopLog_CY, Up Spend Potential Conversion to DKK,used
+PitStopLog_CY, Revenue Uplift CONVERSION to DKK,used
+PitStopLog_CY, Expected mRoas,used
+Promo_Calendar, Number of Promos 24,
+Promo_Calendar, Number of Promos 23,
+Promo_Calendar, Number of promo days 4 week avg 24,
+Promo_Calendar, Number of promo days 4 week avg 23,
+Promo_Calendar, Number of promo days 4 week CY,used
+Promo_Calendar, Promo days YoY,
+Promo_Calendar, Promo days 4 week avg  YoY,
+Promo_Calendar, Number of promo days 4 week  23,
+Promo_Calendar, Number of promo days 12 week avg 23,
+Promo_Calendar, Number of promo days 12 week CY,
+Promo_Calendar, Promo days 12 week avg  YoY,
+Promo_Calendar, Number of Promos + 1 week CY,used
+Promo_Calendar, Number of Promos + 2 week CY,used
+Promo_Calendar, Number of Promos + 3 week CY,used
+Promo_Calendar, Number of Promos + 4 week CY,used
+Promo_Calendar, Number of Promos + 1 week LY,
+Promo_Calendar, Number of Promos + 2 week LY,
+Promo_Calendar, Number of Promos + 3 week LY,
+Promo_Calendar, Number of Promos + 4 week LY,
+Promo_Calendar, Number of Promos + 1 week YoY,
+Promo_Calendar, Number of Promos + 2 week YoY,
+Promo_Calendar, Number of Promos + 3 week YoY,
+Promo_Calendar, Number of Promos + 4 week YoY,
+Promo_Calendar, Number of Promos Calc 24,used
+Promo_Calendar, Number of Promos Calc 23,
+Promo_Calendar, String-based Number of promo days 4 week 23,
+Promo_Calendar, String-based Number of promo days 4 week 24,
+Promo_Calendar, String-based Number of Promos + 1 week CY,
+Promo_Calendar, String-based Number of Promos + 1 week LY,
+Promo_Calendar, Promo days YoY 12W Slope_Deviation_from_Trend,
+Promo_Calendar, Promo days YoY 4W Slope_Deviation_from_Trend,
+Promo_Calendar, Number of Promos Calc V2,used
+LE_DATA_SOB, % eStore,deleted
+LE_DATA_SOB, % eStore LY,deleted
+LE_DATA_SOB, % eStore LY string_for_GPG,deleted
+LE_DATA_SOB, % O&O,deleted
+LE_DATA_SOB, % O&O LY,deleted
+LE_DATA_SOB, % O&O LY string_forGPG,deleted
+LE_DATA_SOB, % O&O_SIS,deleted
+LE_DATA_SOB, % O&O_SiS LY,deleted
+LE_DATA_SOB, % O&O_SiS LY string_for_GPG,deleted
+LE_DATA_SOB, % WHS&DSTR,deleted
+LE_DATA_SOB, % WHS&DSTR LY,deleted
+LE_DATA_SOB, % WHS&DSTR LY string_for_GPG,deleted
+LE_DATA_SOB, Index TIM,deleted
+LE_DATA_SOB, LE + 1 Weeks YoY,used
+LE_DATA_SOB, LE + 2 Weeks YoY,used
+LE_DATA_SOB, LE + 3 Weeks YoY,used
+LE_DATA_SOB, LE + 4 Weeks CY TIM,deleted
+LE_DATA_SOB, LE + 4 Weeks YoY,used
+LE_DATA_SOB, LE + 4 Weeks YoY TIM,deleted
+LE_DATA_SOB, LE + All 4w YoY,used
+LE_DATA_SOB, MISSINGTotal LE YoY workaround_for_slopes,deleted
+LE_DATA_SOB, Total eStore CY 4 week avg.,deleted
+LE_DATA_SOB, Total eStore Spend CY,deleted
+LE_DATA_SOB, Total eStore Spend LY,deleted
+LE_DATA_SOB, Total eStore YoY,deleted
+LE_DATA_SOB, Total LE,deleted
+LE_DATA_SOB, Total LE + 1 week CY,deleted
+LE_DATA_SOB, Total LE + 1 week LY,deleted
+LE_DATA_SOB, Total LE + 2 week CY,deleted
+LE_DATA_SOB, Total LE + 2 week LY,deleted
+LE_DATA_SOB, Total LE + 3 week CY,deleted
+LE_DATA_SOB, Total LE + 3 week LY,deleted
+LE_DATA_SOB, Total LE + 4 week CY,deleted
+LE_DATA_SOB, Total LE + 4 week LY,deleted
+LE_DATA_SOB, Total LE 12 week YoY,deleted
+LE_DATA_SOB, Total LE 4 week YoY,used
+LE_DATA_SOB, Total LE 4 week YoY WEEKNUM(TODAY),deleted
+LE_DATA_SOB, Total LE CY 12 week avg.,used
+LE_DATA_SOB, Total LE CY 4 week avg.,used
+LE_DATA_SOB, Total LE CY 4 week avg. WEEKNUM(TODAY),deleted
+LE_DATA_SOB, Total LE LY 12 week avg.,used
+LE_DATA_SOB, Total LE LY 4 week avg.,used
+LE_DATA_SOB, Total LE LY 4 week avg. WEEKNUM(TODAY),deleted
+LE_DATA_SOB, Total LE Offline YoY,used
+LE_DATA_SOB, Total LE Online YoY,used
+LE_DATA_SOB, Total LE YoY,used
+LE_DATA_SOB, Total LE YoY 12W Slope_Deviation_from_Trend,used
+LE_DATA_SOB, Total LE YoY 4W Slope_Deviation_from_Trend,used
+LE_DATA_SOB, Total O&O CY 4 week avg.,deleted
+LE_DATA_SOB, Total O&O Spend CY,deleted
+LE_DATA_SOB, Total O&O Spend LY,deleted
+LE_DATA_SOB, Total O&O YoY,deleted
+LE_DATA_SOB, Total O&O_SiS CY 4 week avg.,deleted
+LE_DATA_SOB, Total O&O_SiS Spend CY,deleted
+LE_DATA_SOB, Total O&O_SiS Spend LY,deleted
+LE_DATA_SOB, Total O&O_SiS YoY,deleted
+LE_DATA_SOB, Total Offline LE 12 week YoY,used
+LE_DATA_SOB, Total Offline LE 4 week YoY,used
+LE_DATA_SOB, Total Offline LE CY 12 week avg.,used
+LE_DATA_SOB, Total Offline LE CY 4 week avg.,used
+LE_DATA_SOB, Total Offline LE LY 12 week avg.,used
+LE_DATA_SOB, Total Offline LE LY 4 week avg.,used
+LE_DATA_SOB, Total Offline LE YoY 12W Slope_Deviation_from_Trend,used
+LE_DATA_SOB, Total Offline LE YoY 4W Slope_Deviation_from_Trend,used
+LE_DATA_SOB, Total Offline Spend CY Week fix,deleted
+LE_DATA_SOB, Total Offline Spend LY,deleted
+LE_DATA_SOB, Total Online LE 12 week YoY,used
+LE_DATA_SOB, Total Online LE 12w YoY New Calc,used
+LE_DATA_SOB, Total Online LE 4 week YoY,used
+LE_DATA_SOB, Total Online LE 4w YoY New Calc,used
+LE_DATA_SOB, Total Online LE CY 12 week avg.,used
+LE_DATA_SOB, Total Online LE CY 4 week avg.,used
+LE_DATA_SOB, Total Online LE LY 12 week avg.,used
+LE_DATA_SOB, Total Online LE LY 4 week avg.,used
+LE_DATA_SOB, Total Online LE YoY 12W Slope_Deviation_from_Trend,used
+LE_DATA_SOB, Total Online LE YoY 4W Slope_Deviation_from_Trend,used
+LE_DATA_SOB, Total Online Spend CY,deleted
+LE_DATA_SOB, Total Online Spend CY Week FIX,deleted
+LE_DATA_SOB, Total Online Spend LY,deleted
+LE_DATA_SOB, Total Spend CY,deleted
+LE_DATA_SOB, Total Spend CY ALL,deleted
+LE_DATA_SOB, Total Spend CY V2,used
+LE_DATA_SOB, Total Spend CY V3,deleted
+LE_DATA_SOB, Total Spend CY WEEKNUM(TODAY),deleted
+LE_DATA_SOB, Total Spend LY,deleted
+LE_DATA_SOB, Total Spend LY  WEEKNUM(TODAY),deleted
+LE_DATA_SOB, Total Week Spend Channels CY,deleted
+LE_DATA_SOB, Total Week Spend Channels LY,deleted
+LE_DATA_SOB, Total Week Spend CY 4 week avg.,deleted
+LE_DATA_SOB, Total WHS&DSTR CY 4 week avg.,deleted
+LE_DATA_SOB, Total WHS&DSTR Spend CY,deleted
+LE_DATA_SOB, Total WHS&DSTR Spend LY,deleted
+LE_DATA_SOB, Total WHS&DSTR YoY,deleted
+LE_DATA_SOB, Weighted_avg_LE_All_4w,used
+LE_DATA_SOB, weighted_avg_LE_projection_global,used
+LE_DATA_SOB, weighted_avg_LE_projection_global_backup,deleted
+LE_DATA_SOB, weighted_avg_LE_projection_local+1w,used
+LE_DATA_SOB, weighted_avg_LE_projection_local+2w,used
+LE_DATA_SOB, weighted_avg_LE_projection_local+3w,used
+LE_DATA_SOB, weighted_avg_LE_projection_local+4w,used
+Customer_Acquisition_Monthly, Customer Acq. monthly YoY,deleted
+Customer_Acquisition_Monthly, Customer Acq. monthly 24,deleted
+Customer_Acquisition_Monthly, Customer Acq. monthly 23,deleted
+Customer_Acquisition_Monthly, Customer Acq. 4 week YoY,deleted
+Customer_Acquisition_Monthly, Customer Acq. 3-Month YoY Avg,deleted
+Customer_Acquisition_Monthly, Previous Month Date,deleted
+Customer_Acquisition_Monthly, Previous Month YoY Value,deleted
+Customer_Acquisition_Monthly, MISSINGCustomer Acq. YoY 12W Slope_Deviation_from_Trend,deleted
+Customer_Acquisition_Monthly, Total_NbrCustomers_2024,deleted
+Customer_Acquisition_Monthly, Total_NbrCustomers_2023,deleted
+Customer_Acquisition_Monthly, Customer Acq. 123TESTING,deleted
+Customer_Acquisition_Monthly, CA_month_YoY,used
+Customer_Acquisition_Monthly, CHECK,deleted
+ATR_AA_Landing_Page, Bounce rate 23,deleted
+ATR_AA_Landing_Page, Bounce rate 24,deleted
+ATR_AA_Landing_Page, Bounce rate 4 week avg 23,deleted
+ATR_AA_Landing_Page, Bounce rate 4 week avg 24,deleted
+ATR_AA_Landing_Page, Bounce rate 4w YoY,deleted
+ATR_AA_Landing_Page, Bounce rate YoY,deleted
+ATR_AA_Landing_Page, Conversion rate 23,used
+ATR_AA_Landing_Page, Conversion rate 24,used
+ATR_AA_Landing_Page, Conversion rate 4 week avg LY,used
+ATR_AA_Landing_Page, Conversion rate 4 week avg CY,used
+ATR_AA_Landing_Page, Conversion rate 4 week YoY,used
+ATR_AA_Landing_Page, Conversion rate YoY,used
+ATR_AA_Landing_Page, Estimated Orders LY,used
+ATR_AA_Landing_Page, Estimated Orders CY,used
+ATR_AA_Landing_Page, Estimated orders 4 week avg LY,used
+ATR_AA_Landing_Page, Estimated orders 4 week avg CY,used
+ATR_AA_Landing_Page, Estimated orders 4 week YoY,used
+ATR_AA_Landing_Page, Estimated Orders YoY,used
+ATR_AA_Landing_Page, Page views per visit 23,deleted
+ATR_AA_Landing_Page, Page views per visit 24,deleted
+ATR_AA_Landing_Page, Page views per visit 4 week avg 23,deleted
+ATR_AA_Landing_Page, Page views per visit 4 week avg 24,deleted
+ATR_AA_Landing_Page, Page views per visit 4 week YoY,deleted
+ATR_AA_Landing_Page, Page views per visit YoY,deleted
+ATR_AA_Landing_Page, Time Spend 23,deleted
+ATR_AA_Landing_Page, Time Spend 24,deleted
+ATR_AA_Landing_Page, Time spend YoY,deleted
+ATR_AA_Landing_Page, Time Spent 4 week avg 23,deleted
+ATR_AA_Landing_Page, Time Spent 4 week avg 24,deleted
+ATR_AA_Landing_Page, Time Spent 4w YoY,deleted
+ATR_AA_Landing_Page, Units per transactions 23,used
+ATR_AA_Landing_Page, Units per transactions 24,used
+ATR_AA_Landing_Page, Units per transactions 4 week avg CY,used
+ATR_AA_Landing_Page, Units per transactions 4 week avg LY,used
+ATR_AA_Landing_Page, Units per transactions 4 week YoY,used
+ATR_AA_Landing_Page, Visits 23,used
+ATR_AA_Landing_Page, Visits 2024,used
+ATR_AA_Landing_Page, Visits V2 4 Week Avg LY,used
+ATR_AA_Landing_Page, Visits V2 4 Week Avg CY,used
+ATR_AA_Landing_Page, Visits YoY 2,used
+ATR_AA_Landing_Page, Visits YoY 2 12w,used
+ATR_AA_Landing_Page, Units per transactions YoY,used
+ATR_AA_Landing_Page, FormattedTime 2024,deleted
+ATR_AA_Landing_Page, Time Spend NEW FIX 2024,deleted
+ATR_AA_Landing_Page, Visits + 1 week CY,deleted
+ATR_AA_Landing_Page, Visits + 1 week LY,deleted
+ATR_AA_Landing_Page, Visits YoY + 1 week,deleted
+ATR_AA_Landing_Page, Page views per visit YoY Last Week,deleted
+ATR_AA_Landing_Page, Bounce rate YoY Last Week,deleted
+ATR_AA_Landing_Page, Visits YoY 2 4w,used
+ATR_AA_Landing_Page, Time Spent 4 Week Avg Formatted 24,deleted
+ATR_AA_Landing_Page, Time Spent 4 week avg 24 SUM,deleted
+ATR_AA_Landing_Page, CVR 4w avg Online YoY With TEXT,used
+ATR_AA_Landing_Page, MISSINGCVRYoYOnline_12W_SlopeDeviationFromTrend,used
+ATR_AA_Landing_Page, MISSINGCVRYoYOnline_4W_SlopeDeviationFromTrend,used
+ATR_AA_Landing_Page, Visits V2 12 week avg LY,used
+ATR_AA_Landing_Page, Visits V2 12 week avg CY,used
+ATR_AA_Landing_Page, Visits YoY 2 4w With TEXT,used
+ATR_AA_Landing_Page, Visits 2023 plus Offline Visits LY,used
+ATR_AA_Landing_Page, Visits 2024 plus Offline Visits CY,used
+ATR_AA_Landing_Page, Total Visits Offline/Online YoY,used
+ATR_AA_Landing_Page, Total Visits Offline/Online YoY 12W Slope_Deviation_from_Trend,used
+ATR_AA_Landing_Page, Total Visits Offline/Online YoY 4W Slope_Deviation_from_Trend,used
+ATR_AA_Landing_Page, Total Traffic 4w YoY TIM,used
+ATR_AA_Landing_Page, Total Visits Offline/Online YoY 12 Week Avg,used
+ATR_AA_Landing_Page, Total Visits Offline/Online YoY 4 Week Avg With TEXT,used
+ATR_AA_Landing_Page, Total Visits Offline/Online 4 Week Avg LY,deleted
+ATR_AA_Landing_Page, Total Visits Offline/Online 4 Week Avg CY,deleted
+ATR_AA_Landing_Page, Total Visits Offline/Online 12 Week Avg LY,deleted
+ATR_AA_Landing_Page, Total Visits Offline/Online 12 Week Avg CY,deleted
+ATR_AA_Landing_Page, Visits YoY 2 Last Week,deleted
+ATR_AA_Landing_Page, Visits Online YoY 4W Slope_Deviation_from_Trend,used
+ATR_AA_Landing_Page, Visits Online YoY 12W Slope_Deviation_from_Trend,used
+ATR_AA_Landing_Page, Visits V3,used
+ATR_AA_Landing_Page, Time Spend V2,used
+ATR_AA_Landing_Page, Estimated Orders V2,used
+ATR_AA_Landing_Page, Units per transactions V2,used
+ATR_AA_Landing_Page, Conversion rate V2,used
+ATR_AA_Landing_Page, Visits V22,deleted
+ATR_AA_Landing_Page, Visits plus Offline Visits V2,deleted
+ATR_AA_Landing_Page, Visits plus Offline Visits V2 LY,deleted
+ATR_AA_Landing_Page, Total Traffic 4w YoY,used
+AA_LP_Segments_One, Visits LP_2 2024,used
+AA_LP_Segments_One, Visits LP_2 2023,used
+AA_LP_Segments_One, Visits LP_2 YoY,used
+AA_LP_Segments_One, Total Bounce Rate LP 2023,used
+AA_LP_Segments_One, Total Bounce Rate LP 2024,used
+AA_LP_Segments_One, Total Bounce Rate LP YoY,used
+AA_LP_Segments_One, Averge Order Value 24,deleted
+AA_LP_Segments_One, Averge Order Value 23,deleted
+AA_LP_Segments_One, Averge Order Value YoY,deleted
+AA_LP_Segments_One, Average Bounce rate,deleted
+AA_LP_Segments_One, Bounce rate Segment ONE 4 week avg LY,used
+AA_LP_Segments_One, Bounce rate Segment ONE 4 week avg CY,used
+AA_LP_Segments_One, Bounce rate Segment ONE 4w YoY,used
+AA_LP_Segments_One, Total Bounce Rate LP YoY 4W Slope_Deviation_from_Trend,used
+AA_LP_Segments_One, Total Bounce Rate LP V2,used
+AA_LP_Segments_One, MISSING1_Slope,deleted
+AA_LP_Segments_Three, Visits LP 2024,used
+AA_LP_Segments_Three, Visits LP 2023,used
+AA_LP_Segments_Three, Visits LP YoY,deleted
+AA_LP_Segments_Three, Page Views LP 2024,used
+AA_LP_Segments_Three, Page Views LP 2023,used
+AA_LP_Segments_Three, Page Views LP YoY,deleted
+AA_LP_Segments_Three, Time Spent Min LP 2024,used
+AA_LP_Segments_Three, Time Spent Min LP 2023,used
+AA_LP_Segments_Three, Time Spent Min LP YoY,used
+AA_LP_Segments_Three, Total Conversion Rate LP 2024,used
+AA_LP_Segments_Three, Total Conversion Rate LP 2023,used
+AA_LP_Segments_Three, Total Conversion Rate LP YoY,used
+AA_LP_Segments_Three, Pages Per Visit Segment Three 2024,used
+AA_LP_Segments_Three, Pages Per Visit Segment Three 2023,used
+AA_LP_Segments_Three, Pages Per Visit Segment Three YoY,used
+AA_LP_Segments_Three, Time Spent Min LP FIX 2024,used
+AA_LP_Segments_Three, Units per transactions 23 AA Segment 3,deleted
+AA_LP_Segments_Three, Units per transactions 24 AA Segment 3,deleted
+AA_LP_Segments_Three, Units per transactions AA Segment 3 YoY,deleted
+AA_LP_Segments_Three, Units per transaction 4 week AA Segment 3 avg 23,deleted
+AA_LP_Segments_Three, Units per transactions 4 week AA Segment 3 avg 24,deleted
+AA_LP_Segments_Three, Units per transactions 4 week AA Segment 3 YoY,deleted
+AA_LP_Segments_Three, Total_Bounce_Rate_Calculated_2024,deleted
+AA_LP_Segments_Three, Total_Bounce_Rate_Calculated_2023,deleted
+AA_LP_Segments_Three, Total Conversion Rate LP Intent-Based 2023,used
+AA_LP_Segments_Three, Total Conversion Rate LP Intent-Based 2024,used
+AA_LP_Segments_Three, Total Conversion Rate LP Intent-Based YoY,used
+AA_LP_Segments_Three, Total Conversion Rate LP Intent-Based YoY 4W Slope_Deviation_from_Trend,used
+AA_LP_Segments_Three, Pages Per Visit Segment Three Interest-Based YoY,used
+AA_LP_Segments_Three, Pages Per Visit Segment Three Interest-Based YoY 4W Slope_Deviation_from_Trend,used
+AA_LP_Segments_Three, Time Spent Min 4 Week Avg LP CY,used
+AA_LP_Segments_Three, Time Spent 4 Week Avg YoY LP,used
+AA_LP_Segments_Three, Pages Per Visit Segment Three 4 Week Avg CY,used
+AA_LP_Segments_Three, Pages Per Visit Segment Three 4 Week Avg LY,used
+AA_LP_Segments_Three, Pages Per Visit Segment Three 4 week YoY,used
+AA_LP_Segments_Three, Total Conversion Rate LP 4 week avg CY,used
+AA_LP_Segments_Three, Total Conversion Rate LP 4 week avg LY,used
+AA_LP_Segments_Three, Total Conversion Rate LP 4 week YoY,used
+AA_LP_Segments_Three, Page Views LP V2,deleted
+AA_LP_Segments_Three, Pages Per Visit Segment Three V2,used
+AA_LP_Segments_Three, Visits LP V2,used
+AA_LP_Segments_Three, Total Conversion Rate LP V2,used
+Brand_Interest, Share_of_Search_LY,used
+Brand_Interest, Share_of_Search_CY,used
+Brand_Interest, Share_of_Search_LY_string,used
+Brand_Interest, Share_of_Search_4w_avg_LY,used
+Brand_Interest, Share_of_Search_4w_avg_CY,used
+Brand_Interest, Share_of_Search_4w_avg_YoY,used
+Brand_Interest, Share_of_Search_4w_avg_CY_string,used
+Brand_Interest, Brand_Interest_LY,used
+Brand_Interest, Brand_Interest_CY,used
+Brand_Interest, Brand_Interest_YoY,used
+Brand_Interest, Brand_Interest_4w_avg_LY,used
+Brand_Interest, Brand_Interest_4w_avg_CY,used
+Brand_Interest, Brand_Interest_4w_YoY,used
+Brand_Interest, Brand_Interest_12w_avg_LY,used
+Brand_Interest, Brand_Interest_12w_avg_CY,used
+Brand_Interest, Brand_Interest_12w_YoY,used
+Brand_Interest, Brand_Interest_4w_YoY_string_for_GPG,used
+Brand_Interest, Brand_Interest_YoY_4w_Slope_Deviation_from_Trend,used
+Brand_Interest, Brand_Interest_YoY_12w_Slope_Deviation_from_Trend,used
+Brand_Interest, Share_of_Search_YoY,used
+Brand_Interest, Share_of_Search_CY_%_string,used
+Brand_Interest, Brand_Interest V2,used
+Category_Trends, Category_Interest_CY,used
+Category_Trends, Category_Interest_LY,used
+Category_Trends, Category_Interest_YoY,used
+Category_Trends, Category_Interest_4w_avg_LY,used
+Category_Trends, Category_Interest_4w_avg_CY,used
+Category_Trends, Category_Interest_4w_avg_YoY,used
+Category_Trends, Category_Interest_4w_avg_YoY_string_for_GPG,used
+Category_Trends, Category_Interest V2,used
+LL_mROAS_Channel_Level_View, Aggregated_Channel_mROAS_CY,used
+LL_mROAS_Channel_Level_View, Aggregated_Channel_mROAS_CY (4week avg),used
+mROAS_Target_Table, Non_Promo_Measure,used
+planned_media_spend_main, Spend * 1000 Actual & Planned,
+planned_media_spend_main, 000000000,
+planned_media_spend_main, Actuals Week NR Offline UPDATE ME BI-WEEKLY,
+planned_media_spend_main, Actuals Week NR Digital,
+planned_media_spend_main, Actuals Week NR Last Year,
+planned_media_spend_main, Actuals Week NR TV,
+planned_media_spend_main, Current Year Number WA,used
+planned_media_spend_main, NEXT WEEK CY TIM,
+planned_media_spend_main, NEXT WEEK LY TIM,
+planned_media_spend_main, OFFLINE PLANNED MAIN,used
+planned_media_spend_main, ONLINE PLANNED MAIN,used
+planned_media_spend_main, Offline_spend_CY,used
+planned_media_spend_main, Online_spend_CY,used
+planned_media_spend_main, TV & Other Spend CY 24,used
+planned_media_spend_main, Digital Spend CY 24,used
+planned_media_spend_main, TV & Other Spend LY 23,used
+planned_media_spend_main, Digital Spend LY 23,used
+planned_media_spend_main, Total Spend A&P CY,used
+planned_media_spend_main, Total Spend A&P LY,used
+planned_media_spend_main, Total Spend A&P YoY,used
+planned_media_spend_main, Spend 4 week avg 24 Planned,
+planned_media_spend_main, Total Spend A&P CY Dynamic,
+planned_media_spend_main, OFFLINE ACTUAL MAIN,used
+planned_media_spend_main, ONLINE ACTUAL MAIN,used
+planned_media_spend_main, OFFLINE 12 Week CY TIM,
+planned_media_spend_main, OFFLINE 12 Week LY TIM,
+planned_media_spend_main, OFFLINE 4 Week CY TIM,
+planned_media_spend_main, OFFLINE 4 Week LY TIM,
+planned_media_spend_main, ONLINE 12 Week CY TIM,
+planned_media_spend_main, ONLINE 12 Week LY TIM,
+planned_media_spend_main, ONLINE 4 Week LY TIM,
+planned_media_spend_main, ONLINE 4 Week CY TIM,
+planned_media_spend_main, Spend 12 week avg YoY TIM,
+planned_media_spend_main, Spend 4 week avg YoY TIM,
+planned_media_spend_main, SPEND BUDGET MAIN OVERALL TIM,
+planned_media_spend_main, SPEND BUDGET MAIN OVERALL TIM 4W,used
+planned_media_spend_main, SPEND BUDGET MAIN TIM,used
+planned_media_spend_main, SPEND OPEN BUDGET Af/Dis/Soc/Sear/TV,used
+planned_media_spend_main, SPEND OPEN BUDGET,
+planned_media_spend_main, SPEND OPEN BUDGET 4W,used
+planned_media_spend_main, Media Spend YoY 4W Slope_Deviation_from_Trend,
+planned_media_spend_main, Media Spend YoY 12W Slope_Deviation_from_Trend,
+planned_media_spend_main, 00_Planned Media Spend 4w Slope,
+planned_media_spend_main, 00_Planned Media Spend 1w Slope,
+planned_media_spend_main, 00_Planned Media Spend 1w Slope Dynamic,
+planned_media_spend_main, Spend DKK NEXT week YoY NEW,
+planned_media_spend_main, Spend DKK + 4 TIM,
+planned_media_spend_main, Spend 4 week avg YoY,
+planned_media_spend_main, Spend 12 week avg YoY,
+planned_media_spend_main, Spend DKK + 1 week YoY,
+planned_media_spend_main, Spend DKK + 2 week YoY,
+planned_media_spend_main, Spend DKK + 3 week YoY,
+planned_media_spend_main, Spend DKK + 4 week YoY,
+planned_media_spend_main, Spend DKK NEXT week YoY,used
+planned_media_spend_main, (%) Plan. Med. Spend,used
+planned_media_spend_main, (%) Plan. Med. Spend 4 weeks,used
+planned_media_spend_main, Spend 4 Week YoY DIGITAL,
+planned_media_spend_main, Total Spend A&P YoY 4-Week,
+Customer_Acquisition_Quarterly, CA_12week_YoY,deleted
